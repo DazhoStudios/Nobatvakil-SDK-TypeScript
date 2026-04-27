@@ -1,0 +1,192 @@
+import { z } from 'zod';
+import { BaseService } from '../base-service';
+import { ContentType, HttpResponse, SdkConfig } from '../../http/types';
+import { RequestBuilder } from '../../http/transport/request-builder';
+import { SerializationStyle } from '../../http/serialization/base-serializer';
+import { ThrowableError } from '../../http/errors/throwable-error';
+import { Environment } from '../../http/environment';
+
+/**
+ * Service class for CategoryAndSlugService operations.
+ * Provides methods to interact with CategoryAndSlugService-related API endpoints.
+ * All methods return promises and handle request/response serialization automatically.
+ */
+export class CategoryAndSlugService extends BaseService {
+  protected categoryBySlugConfig: Partial<SdkConfig> = { environment: Environment.DOMIN_SERVER };
+
+  /**
+   * Sets method-level configuration for categoryBySlug.
+   * @param config - Partial configuration to override service-level defaults
+   * @returns This service instance for method chaining
+   */
+  setCategoryBySlugConfig(config: Partial<SdkConfig>): this {
+    this.categoryBySlugConfig = config;
+    return this;
+  }
+
+  /**
+ * # Get Family Lawyers in Karaj
+## Overview
+
+This endpoint retrieves a comprehensive list of family law attorneys (وکیل خانواده) practicing in Karaj city, Alborz province, Iran. It provides detailed information about the lawyers, city metadata, category information, and SEO-optimized page content.
+
+## Purpose
+
+- Fetch all registered family lawyers in Karaj
+    
+- Retrieve city and category metadata for the search
+    
+- Get SEO page content and metadata for the lawyer listing page
+    
+- Access FAQ information related to family lawyers in this location
+    
+
+## Request Details
+
+- **Method:** `POST`
+    
+- **Endpoint:** `/api/tools/lawyers/vakil-khanevade/karaj`
+    
+- **Base URL Variable:** `{{domin_server}}`
+    
+- **Body:** None required
+    
+
+## Response Structure
+
+### Success Response (200 OK)
+
+``` json
+{
+  "status": 200,
+  "data": {
+    "message": "Category With city found",
+    "info": {
+      "count_faq": 0,
+      "count_lawyers": 9,
+      "city_id": 4,
+      "city_slug": "karaj",
+      "city_name": "کرج",
+      "state_id": 5,
+      "state_name": "البرز",
+      "country_id": 28,
+      "country_name": "ایران",
+      "category_id": 33,
+      "category_slug": "vakil-khanevade",
+      "category_name": "وکیل خانواده"
+    },
+    "page": {
+      "id": 1,
+      "slug": "karajfamily",
+      "title": "بهترین وکیل در کرج",
+      "h1": "بهترین وکیل در کرج",
+      "meta_title": "بهترین وکیل در کرج",
+      "meta_description": "بهترین وکیل در استان البرز شهر کرج",
+      "body": "<p class=&#x27;preserveHtml&#x27; class=&#x27;preserveHtml&#x27; class=&#x27;preserveHtml&#x27; class=&#x27;preserveHtml&#x27;>Page content...</p>",
+      "filters": {
+        "country_id": 28,
+        "state_id": 5,
+        "city_id": 4,
+        "category_slug": "33"
+      },
+      "status": "active",
+      "created_at": "2025-12-24T11:28:04.000000Z",
+      "updated_at": "2025-12-24T12:04:58.000000Z"
+    },
+    "faq": {
+      {
+      "qustion": "The Question1",
+      "answer": "The Answer1"
+      },
+      {
+      "qustion": "The Question2",
+      "answer": "The Answer2"
+      }
+     }
+  }
+}
+
+ ```
+
+## Response Fields Explained
+
+### `data.info` Object
+
+Contains aggregated information about the search results:
+
+- **count_faq:** Number of frequently asked questions available (0 in this case)
+    
+- **count_lawyers:** Total number of family lawyers found in Karaj (9)
+    
+- **city_id, city_slug, city_name:** City identifiers and name (Karaj - کرج)
+    
+- **state_id, state_name:** Province identifiers and name (Alborz - البرز)
+    
+- **country_id, country_name:** Country identifiers and name (Iran - ایران)
+    
+- **category_id, category_slug, category_name:** Legal category identifiers (Family Lawyer - وکیل خانواده)
+    
+
+### `data.page` Object
+
+SEO-optimized page metadata for the lawyer listing:
+
+- **id:** Unique page identifier
+    
+- **slug:** URL-friendly page identifier (karajfamily)
+    
+- **title:** Page title for display
+    
+- **h1:** Main heading for the page
+    
+- **meta_title:** SEO meta title tag content
+    
+- **meta_description:** SEO meta description tag content
+    
+- **body:** HTML content for the page body
+    
+- **filters:** Applied search filters (country, state, city, category)
+    
+- **status:** Page publication status (active/inactive)
+    
+- **created_at, updated_at:** Timestamp information
+    
+
+### `data.faq` Array
+
+List of frequently asked questions related to family lawyers in Karaj (currently empty)
+
+## Usage Notes
+
+- This endpoint uses the `vakil-khanevade` (family lawyer) category slug
+    
+- The city name `karaj` is hardcoded in the URL path
+    
+- No request body or authentication is required
+    
+- The response includes Persian (Farsi) text for city, state, and category names
+    
+- Page content includes HTML formatting for rich text display
+    
+- The `count_lawyers` field indicates 9 family lawyers are available in this location
+ * @param {Partial<SdkConfig>} [requestConfig] - The request configuration for retry and validation.
+ * @returns {Promise<HttpResponse<any>>} - OK
+ */
+  async categoryBySlug(requestConfig?: Partial<SdkConfig>): Promise<any> {
+    const resolvedConfig = this.getResolvedConfig(this.categoryBySlugConfig, requestConfig);
+    const request = new RequestBuilder()
+      .setConfig(resolvedConfig)
+      .setBaseUrl(resolvedConfig)
+      .setMethod('POST')
+      .setPath('/api/tools/lawyers/vakil-khanevade/karaj')
+      .setRequestSchema(z.any())
+      .setRequestContentType(ContentType.Json)
+      .addResponse({
+        schema: z.any(),
+        contentType: ContentType.Json,
+        status: 200,
+      })
+      .build();
+    return this.client.callDirect<any>(request);
+  }
+}
