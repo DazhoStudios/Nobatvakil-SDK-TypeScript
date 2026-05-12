@@ -15,7 +15,7 @@ on:
 env:
   # Toggle to enable package-manager publishing on push to base.
   # The workflow_dispatch input above overrides this on manual runs.
-  PUBLISH_TO_PACKAGE_MANAGER: false
+  PUBLISH_TO_PACKAGE_MANAGER: true
 
 jobs:
   release:

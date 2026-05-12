@@ -50,6 +50,7 @@ import { BlogsService } from './services/blogs';
 import { MapsService } from './services/maps';
 import { TicketsService } from './services/tickets';
 import { FaqService } from './services/faq';
+import { UpService } from './services/up';
 
 export * from './services/auth';
 export * from './services/states';
@@ -101,6 +102,7 @@ export * from './services/blogs';
 export * from './services/maps';
 export * from './services/tickets';
 export * from './services/faq';
+export * from './services/up';
 
 export * from './http';
 export { Environment } from './http/environment';
@@ -206,6 +208,8 @@ export class ServerSdk {
 
   public readonly faq: FaqService;
 
+  public readonly up: UpService;
+
   constructor(public config1: SdkConfig) {
     this.auth = new AuthService(this.config1);
 
@@ -308,6 +312,8 @@ export class ServerSdk {
     this.tickets = new TicketsService(this.config1);
 
     this.faq = new FaqService(this.config1);
+
+    this.up = new UpService(this.config1);
   }
 
   set baseUrl(baseUrl: string) {
@@ -361,6 +367,7 @@ export class ServerSdk {
     this.maps.baseUrl = baseUrl;
     this.tickets.baseUrl = baseUrl;
     this.faq.baseUrl = baseUrl;
+    this.up.baseUrl = baseUrl;
   }
 
   set environment(environment: Environment) {
@@ -414,6 +421,7 @@ export class ServerSdk {
     this.maps.baseUrl = environment;
     this.tickets.baseUrl = environment;
     this.faq.baseUrl = environment;
+    this.up.baseUrl = environment;
   }
 
   set timeoutMs(timeoutMs: number) {
@@ -467,6 +475,7 @@ export class ServerSdk {
     this.maps.timeoutMs = timeoutMs;
     this.tickets.timeoutMs = timeoutMs;
     this.faq.timeoutMs = timeoutMs;
+    this.up.timeoutMs = timeoutMs;
   }
 
   set token(token: string) {
@@ -520,6 +529,7 @@ export class ServerSdk {
     this.maps.token = token;
     this.tickets.token = token;
     this.faq.token = token;
+    this.up.token = token;
   }
 }
 

@@ -39,7 +39,7 @@ export class AuthService extends BaseService {
   }
 
   /**
-   *
+   * test
    * @param {Partial<SdkConfig>} [requestConfig] - The request configuration for retry and validation.
    * @returns {Promise<HttpResponse<any>>} - OK
    */

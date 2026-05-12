@@ -16,7 +16,7 @@
       "post": "import { CitiesRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const citiesRequest: CitiesRequest = {\t\n    stateId: \"5\"\n  };\n\n  const data = await serverSdk.states.cities(citiesRequest);\n\n  console.log(data);\n})();\n"
     },
     "/up": {
-      "get": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.system.systemOnline();\n\n  console.log(data);\n})();\n"
+      "get": "import { CheckUpRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const checkUpRequest: CheckUpRequest = {\t\n    phoneNumber: \"09106059954\"\n  };\n\n  const data = await serverSdk.up.checkUp(checkUpRequest);\n\n  console.log(data);\n})();\n"
     },
     "/api/tools/categories": {
       "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.category.getCategories();\n\n  console.log(data);\n})();\n"

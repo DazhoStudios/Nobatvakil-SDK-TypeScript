@@ -1,6 +1,6 @@
 {
   "name": "server-sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This Folder Provided for Production With Liara  [Liara Console](https://console.liara.run)",
   "source": "./src/index.ts",
   "main": "./dist/index.js",
