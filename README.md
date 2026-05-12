@@ -1,6 +1,6 @@
-# NobatvakilServerSdk TypeScript SDK 1.0.0
+# ServerSdk TypeScript SDK 1.0.0
 
-Welcome to the NobatvakilServerSdk SDK documentation. This guide will help you get started with integrating and using the NobatvakilServerSdk SDK in your project.
+Welcome to the ServerSdk SDK documentation. This guide will help you get started with integrating and using the ServerSdk SDK in your project.
 
 ## Versions
 
@@ -17,6 +17,8 @@ This Folder Provided for Production With Liara
 - [Setup & Configuration](#setup--configuration)
   - [Supported Language Versions](#supported-language-versions)
   - [Installation](#installation)
+- [Authentication](#authentication)
+  - [Access Token Authentication](#access-token-authentication)
 - [Setting a Custom Timeout](#setting-a-custom-timeout)
 - [Sample Usage](#sample-usage)
 - [Services](#services)
@@ -33,13 +35,36 @@ This SDK is compatible with the following versions: `TypeScript >= 4.8.4`
 To get started with the SDK, we recommend installing using `npm` or `yarn`:
 
 ```bash
-npm install nobatvakil-server-sdk
+npm install server-sdk
 ```
 
 or
 
 ```bash
-yarn add nobatvakil-server-sdk
+yarn add server-sdk
+```
+
+## Authentication
+
+### Access Token Authentication
+
+The ServerSdk API uses an Access Token for authentication.
+
+This token must be provided to authenticate your requests to the API.
+
+#### Setting the Access Token
+
+When you initialize the SDK, you can set the access token as follows:
+
+```ts
+const sdk = new ServerSdk({ token: 'YOUR_TOKEN' });
+```
+
+If you need to set or update the access token after initializing the SDK, you can use:
+
+```ts
+const sdk = new ServerSdk();
+sdk.token = 'YOUR_TOKEN';
 ```
 
 ## Setting a Custom Timeout
@@ -47,7 +72,7 @@ yarn add nobatvakil-server-sdk
 You can set a custom timeout for the SDK's HTTP requests as follows:
 
 ```ts
-const nobatvakilServerSdk = new NobatvakilServerSdk({ timeout: 10000 });
+const serverSdk = new ServerSdk({ timeout: 10000 });
 ```
 
 # Sample Usage
@@ -55,12 +80,14 @@ const nobatvakilServerSdk = new NobatvakilServerSdk({ timeout: 10000 });
 Below is a comprehensive example demonstrating how to authenticate and call a simple endpoint:
 
 ```ts
-import { NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
-  const data = await nobatvakilServerSdk.states.countries();
+  const data = await serverSdk.states.countries();
 
   console.log(data);
 })();

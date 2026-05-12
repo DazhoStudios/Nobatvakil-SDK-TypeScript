@@ -19,12 +19,14 @@ A list of all methods in the `CoinsService` service. Click on the method name to
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
-  const data = await nobatvakilServerSdk.coins.listHistory();
+  const data = await serverSdk.coins.listHistory();
 
   console.log(data);
 })();
@@ -48,16 +50,18 @@ import { NobatvakilServerSdk } from 'nobatvakil-server-sdk';
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk, TradeMarketRequest } from 'nobatvakil-server-sdk';
+import { ServerSdk, TradeMarketRequest } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const tradeMarketRequest: TradeMarketRequest = {
     coin: '1',
   };
 
-  const data = await nobatvakilServerSdk.coins.tradeMarket(tradeMarketRequest);
+  const data = await serverSdk.coins.tradeMarket(tradeMarketRequest);
 
   console.log(data);
 })();

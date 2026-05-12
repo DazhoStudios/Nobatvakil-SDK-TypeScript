@@ -26,18 +26,18 @@ A list of all methods in the `LawyerDashboardCategoryService` service. Click on 
 **Example Usage Code Snippet**
 
 ```typescript
-import { LawyerDashboardCategoryListsRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { LawyerDashboardCategoryListsRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const lawyerDashboardCategoryListsRequest: LawyerDashboardCategoryListsRequest = {
-    id: '2',
+    id: '79',
   };
 
-  const data = await nobatvakilServerSdk.lawyerDashboardCategory.lists(
-    lawyerDashboardCategoryListsRequest,
-  );
+  const data = await serverSdk.lawyerDashboardCategory.lists(lawyerDashboardCategoryListsRequest);
 
   console.log(data);
 })();
@@ -61,19 +61,19 @@ import { LawyerDashboardCategoryListsRequest, NobatvakilServerSdk } from 'nobatv
 **Example Usage Code Snippet**
 
 ```typescript
-import { LawyerDashboardCategoryCreateRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { LawyerDashboardCategoryCreateRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const lawyerDashboardCategoryCreateRequest: LawyerDashboardCategoryCreateRequest = {
     id: '2',
     categoryId: '1',
   };
 
-  const data = await nobatvakilServerSdk.lawyerDashboardCategory.create(
-    lawyerDashboardCategoryCreateRequest,
-  );
+  const data = await serverSdk.lawyerDashboardCategory.create(lawyerDashboardCategoryCreateRequest);
 
   console.log(data);
 })();
@@ -97,19 +97,19 @@ import { LawyerDashboardCategoryCreateRequest, NobatvakilServerSdk } from 'nobat
 **Example Usage Code Snippet**
 
 ```typescript
-import { LawyerDashboardCategoryRemoveRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { LawyerDashboardCategoryRemoveRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const lawyerDashboardCategoryRemoveRequest: LawyerDashboardCategoryRemoveRequest = {
     id: '1',
     categoryId: '1',
   };
 
-  const data = await nobatvakilServerSdk.lawyerDashboardCategory.remove(
-    lawyerDashboardCategoryRemoveRequest,
-  );
+  const data = await serverSdk.lawyerDashboardCategory.remove(lawyerDashboardCategoryRemoveRequest);
 
   console.log(data);
 })();

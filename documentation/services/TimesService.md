@@ -28,16 +28,18 @@ A list of all methods in the `TimesService` service. Click on the method name to
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk, TimesListRequest } from 'nobatvakil-server-sdk';
+import { ServerSdk, TimesListRequest } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const timesListRequest: TimesListRequest = {
     id: '19',
   };
 
-  const data = await nobatvakilServerSdk.times.list(timesListRequest);
+  const data = await serverSdk.times.list(timesListRequest);
 
   console.log(data);
 })();
@@ -63,10 +65,12 @@ import { NobatvakilServerSdk, TimesListRequest } from 'nobatvakil-server-sdk';
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk, TimesCreateRequest } from 'nobatvakil-server-sdk';
+import { ServerSdk, TimesCreateRequest } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const timesCreateRequest: TimesCreateRequest = {
     lawyerId: '2',
@@ -75,7 +79,7 @@ import { NobatvakilServerSdk, TimesCreateRequest } from 'nobatvakil-server-sdk';
     time: '12:00:00',
   };
 
-  const data = await nobatvakilServerSdk.times.create(timesCreateRequest);
+  const data = await serverSdk.times.create(timesCreateRequest);
 
   console.log(data);
 })();
@@ -99,10 +103,12 @@ import { NobatvakilServerSdk, TimesCreateRequest } from 'nobatvakil-server-sdk';
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk, TimesUpdateRequest } from 'nobatvakil-server-sdk';
+import { ServerSdk, TimesUpdateRequest } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const timesUpdateRequest: TimesUpdateRequest = {
     id: '11',
@@ -112,7 +118,7 @@ import { NobatvakilServerSdk, TimesUpdateRequest } from 'nobatvakil-server-sdk';
     time: '12:00:00',
   };
 
-  const data = await nobatvakilServerSdk.times.update(timesUpdateRequest);
+  const data = await serverSdk.times.update(timesUpdateRequest);
 
   console.log(data);
 })();
@@ -136,16 +142,18 @@ import { NobatvakilServerSdk, TimesUpdateRequest } from 'nobatvakil-server-sdk';
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk, TimesDeleteRequest } from 'nobatvakil-server-sdk';
+import { ServerSdk, TimesDeleteRequest } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const timesDeleteRequest: TimesDeleteRequest = {
     id: '125',
   };
 
-  const data = await nobatvakilServerSdk.times.delete_(timesDeleteRequest);
+  const data = await serverSdk.times.delete_(timesDeleteRequest);
 
   console.log(data);
 })();
@@ -171,10 +179,12 @@ import { NobatvakilServerSdk, TimesDeleteRequest } from 'nobatvakil-server-sdk';
 **Example Usage Code Snippet**
 
 ```typescript
-import { CreateBulkRequest, NobatvakilServerSdk, TimeSchedules } from 'nobatvakil-server-sdk';
+import { CreateBulkRequest, ServerSdk, TimeSchedules } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const timeSchedules: TimeSchedules = {
     days: [1],
@@ -190,7 +200,7 @@ import { CreateBulkRequest, NobatvakilServerSdk, TimeSchedules } from 'nobatvaki
     timeSchedules: [timeSchedules],
   };
 
-  const data = await nobatvakilServerSdk.times.createBulk(createBulkRequest);
+  const data = await serverSdk.times.createBulk(createBulkRequest);
 
   console.log(data);
 })();

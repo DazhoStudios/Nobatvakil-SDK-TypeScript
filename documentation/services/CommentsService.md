@@ -19,12 +19,14 @@ A list of all methods in the `CommentsService` service. Click on the method name
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
-  const data = await nobatvakilServerSdk.comments.list();
+  const data = await serverSdk.comments.list();
 
   console.log(data);
 })();
@@ -48,16 +50,18 @@ import { NobatvakilServerSdk } from 'nobatvakil-server-sdk';
 **Example Usage Code Snippet**
 
 ```typescript
-import { CommentsRemoveRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { CommentsRemoveRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const commentsRemoveRequest: CommentsRemoveRequest = {
     id: '1',
   };
 
-  const data = await nobatvakilServerSdk.comments.remove(commentsRemoveRequest);
+  const data = await serverSdk.comments.remove(commentsRemoveRequest);
 
   console.log(data);
 })();

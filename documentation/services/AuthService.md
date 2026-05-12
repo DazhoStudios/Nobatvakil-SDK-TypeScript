@@ -25,16 +25,18 @@ A list of all methods in the `AuthService` service. Click on the method name to 
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk, SendOtpRequest } from 'nobatvakil-server-sdk';
+import { SendOtpRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const sendOtpRequest: SendOtpRequest = {
     phoneNumber: '09106059954',
   };
 
-  const data = await nobatvakilServerSdk.auth.sendOtp(sendOtpRequest);
+  const data = await serverSdk.auth.sendOtp(sendOtpRequest);
 
   console.log(data);
 })();
@@ -60,17 +62,19 @@ import { NobatvakilServerSdk, SendOtpRequest } from 'nobatvakil-server-sdk';
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk, VerifyOtpRequest } from 'nobatvakil-server-sdk';
+import { ServerSdk, VerifyOtpRequest } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const verifyOtpRequest: VerifyOtpRequest = {
     phoneNumber: '09022525374',
     code: '161138',
   };
 
-  const data = await nobatvakilServerSdk.auth.verifyOtp(verifyOtpRequest);
+  const data = await serverSdk.auth.verifyOtp(verifyOtpRequest);
 
   console.log(data);
 })();

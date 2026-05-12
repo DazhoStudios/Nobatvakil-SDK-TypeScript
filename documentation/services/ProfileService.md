@@ -26,17 +26,19 @@ A list of all methods in the `ProfileService` service. Click on the method name 
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk, ProfileUpdateAvatarRequest } from 'nobatvakil-server-sdk';
+import { ProfileUpdateAvatarRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const profileUpdateAvatarRequest: ProfileUpdateAvatarRequest = {
     id: '1',
     image: new ArrayBuffer(0),
   };
 
-  const data = await nobatvakilServerSdk.profile.updateAvatar(profileUpdateAvatarRequest);
+  const data = await serverSdk.profile.updateAvatar(profileUpdateAvatarRequest);
 
   console.log(data);
 })();
@@ -60,10 +62,12 @@ import { NobatvakilServerSdk, ProfileUpdateAvatarRequest } from 'nobatvakil-serv
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk, ProfileUpdateProfileRequest } from 'nobatvakil-server-sdk';
+import { ProfileUpdateProfileRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const profileUpdateProfileRequest: ProfileUpdateProfileRequest = {
     firstName: 'Yousef',
@@ -73,7 +77,7 @@ import { NobatvakilServerSdk, ProfileUpdateProfileRequest } from 'nobatvakil-ser
     gender: 'male',
   };
 
-  const data = await nobatvakilServerSdk.profile.updateProfile(profileUpdateProfileRequest);
+  const data = await serverSdk.profile.updateProfile(profileUpdateProfileRequest);
 
   console.log(data);
 })();
@@ -93,12 +97,14 @@ import { NobatvakilServerSdk, ProfileUpdateProfileRequest } from 'nobatvakil-ser
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
-  const data = await nobatvakilServerSdk.profile.deleteAvatar();
+  const data = await serverSdk.profile.deleteAvatar();
 
   console.log(data);
 })();

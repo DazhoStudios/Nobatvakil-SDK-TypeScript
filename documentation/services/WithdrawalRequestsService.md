@@ -25,17 +25,19 @@ A list of all methods in the `WithdrawalRequestsService` service. Click on the m
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk, WithdrawalRequestsCreateRequest } from 'nobatvakil-server-sdk';
+import { ServerSdk, WithdrawalRequestsCreateRequest } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const withdrawalRequestsCreateRequest: WithdrawalRequestsCreateRequest = {
-    lawyerId: '1',
-    cardId: '1',
+    lawyerId: '79',
+    cardId: '13',
   };
 
-  const data = await nobatvakilServerSdk.withdrawalRequests.create(withdrawalRequestsCreateRequest);
+  const data = await serverSdk.withdrawalRequests.create(withdrawalRequestsCreateRequest);
 
   console.log(data);
 })();
@@ -59,16 +61,18 @@ import { NobatvakilServerSdk, WithdrawalRequestsCreateRequest } from 'nobatvakil
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk, WithdrawalRequestsListRequest } from 'nobatvakil-server-sdk';
+import { ServerSdk, WithdrawalRequestsListRequest } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const withdrawalRequestsListRequest: WithdrawalRequestsListRequest = {
     lawyerId: '1',
   };
 
-  const data = await nobatvakilServerSdk.withdrawalRequests.list(withdrawalRequestsListRequest);
+  const data = await serverSdk.withdrawalRequests.list(withdrawalRequestsListRequest);
 
   console.log(data);
 })();

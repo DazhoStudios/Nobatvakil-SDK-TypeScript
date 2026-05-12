@@ -18,12 +18,14 @@ A list of all methods in the `OffersService` service. Click on the method name t
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
-  const data = await nobatvakilServerSdk.offers.listMyOffer();
+  const data = await serverSdk.offers.listMyOffer();
 
   console.log(data);
 })();

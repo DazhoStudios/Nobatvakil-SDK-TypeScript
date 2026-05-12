@@ -22,12 +22,14 @@ A list of all methods in the `StatesService` service. Click on the method name t
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
-  const data = await nobatvakilServerSdk.states.countries();
+  const data = await serverSdk.states.countries();
 
   console.log(data);
 })();
@@ -51,16 +53,18 @@ import { NobatvakilServerSdk } from 'nobatvakil-server-sdk';
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk, StatesRequest } from 'nobatvakil-server-sdk';
+import { ServerSdk, StatesRequest } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const statesRequest: StatesRequest = {
     countryId: '28',
   };
 
-  const data = await nobatvakilServerSdk.states.states(statesRequest);
+  const data = await serverSdk.states.states(statesRequest);
 
   console.log(data);
 })();
@@ -84,16 +88,18 @@ import { NobatvakilServerSdk, StatesRequest } from 'nobatvakil-server-sdk';
 **Example Usage Code Snippet**
 
 ```typescript
-import { CitiesRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { CitiesRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const citiesRequest: CitiesRequest = {
     stateId: '5',
   };
 
-  const data = await nobatvakilServerSdk.states.cities(citiesRequest);
+  const data = await serverSdk.states.cities(citiesRequest);
 
   console.log(data);
 })();

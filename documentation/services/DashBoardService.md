@@ -18,12 +18,14 @@ A list of all methods in the `DashBoardService` service. Click on the method nam
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
-  const data = await nobatvakilServerSdk.dashBoard.getPermisionList();
+  const data = await serverSdk.dashBoard.getPermisionList();
 
   console.log(data);
 })();

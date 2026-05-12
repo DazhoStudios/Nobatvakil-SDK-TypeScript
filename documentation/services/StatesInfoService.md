@@ -19,12 +19,14 @@ A list of all methods in the `StatesInfoService` service. Click on the method na
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
-  const data = await nobatvakilServerSdk.statesInfo.getStatesBySlug();
+  const data = await serverSdk.statesInfo.getStatesBySlug();
 
   console.log(data);
 })();
@@ -42,12 +44,14 @@ import { NobatvakilServerSdk } from 'nobatvakil-server-sdk';
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
-  const data = await nobatvakilServerSdk.statesInfo.getCitiesBySlug();
+  const data = await serverSdk.statesInfo.getCitiesBySlug();
 
   console.log(data);
 })();

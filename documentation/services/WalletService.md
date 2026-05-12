@@ -19,12 +19,14 @@ A list of all methods in the `WalletService` service. Click on the method name t
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
-  const data = await nobatvakilServerSdk.wallet.list();
+  const data = await serverSdk.wallet.list();
 
   console.log(data);
 })();
@@ -48,16 +50,18 @@ import { NobatvakilServerSdk } from 'nobatvakil-server-sdk';
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk, WalletAddRequest } from 'nobatvakil-server-sdk';
+import { ServerSdk, WalletAddRequest } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const walletAddRequest: WalletAddRequest = {
     amount: '10000',
   };
 
-  const data = await nobatvakilServerSdk.wallet.add(walletAddRequest);
+  const data = await serverSdk.wallet.add(walletAddRequest);
 
   console.log(data);
 })();

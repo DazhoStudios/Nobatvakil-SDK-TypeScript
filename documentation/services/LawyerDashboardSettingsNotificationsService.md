@@ -19,12 +19,14 @@ A list of all methods in the `LawyerDashboardSettingsNotificationsService` servi
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
-  const data = await nobatvakilServerSdk.lawyerDashboardSettingsNotifications.list();
+  const data = await serverSdk.lawyerDashboardSettingsNotifications.list();
 
   console.log(data);
 })();
@@ -48,13 +50,12 @@ import { NobatvakilServerSdk } from 'nobatvakil-server-sdk';
 **Example Usage Code Snippet**
 
 ```typescript
-import {
-  LawyerDashboardSettingsNotificationsUpdateRequest,
-  NobatvakilServerSdk,
-} from 'nobatvakil-server-sdk';
+import { LawyerDashboardSettingsNotificationsUpdateRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const lawyerDashboardSettingsNotificationsUpdateRequest: LawyerDashboardSettingsNotificationsUpdateRequest =
     {
@@ -63,7 +64,7 @@ import {
       emailEnabled: 'true',
     };
 
-  const data = await nobatvakilServerSdk.lawyerDashboardSettingsNotifications.update(
+  const data = await serverSdk.lawyerDashboardSettingsNotifications.update(
     lawyerDashboardSettingsNotificationsUpdateRequest,
   );
 

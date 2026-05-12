@@ -25,16 +25,18 @@ A list of all methods in the `BoostService` service. Click on the method name to
 **Example Usage Code Snippet**
 
 ```typescript
-import { BoostListRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { BoostListRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const boostListRequest: BoostListRequest = {
     lawyerId: '1',
   };
 
-  const data = await nobatvakilServerSdk.boost.list(boostListRequest);
+  const data = await serverSdk.boost.list(boostListRequest);
 
   console.log(data);
 })();
@@ -58,10 +60,12 @@ import { BoostListRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
 **Example Usage Code Snippet**
 
 ```typescript
-import { BoostPayRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { BoostPayRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const boostPayRequest: BoostPayRequest = {
     lawyerId: '1',
@@ -69,7 +73,7 @@ import { BoostPayRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
     paymentMethod: 'wallet',
   };
 
-  const data = await nobatvakilServerSdk.boost.pay(boostPayRequest);
+  const data = await serverSdk.boost.pay(boostPayRequest);
 
   console.log(data);
 })();

@@ -26,16 +26,18 @@ A list of all methods in the `CallsService` service. Click on the method name to
 **Example Usage Code Snippet**
 
 ```typescript
-import { JoinRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { JoinRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const joinRequest: JoinRequest = {
     userName: 'Yousef Moghadam',
   };
 
-  const data = await nobatvakilServerSdk.calls.join(joinRequest);
+  const data = await serverSdk.calls.join(joinRequest);
 
   console.log(data);
 })();
@@ -53,12 +55,14 @@ import { JoinRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
-  const data = await nobatvakilServerSdk.calls.end();
+  const data = await serverSdk.calls.end();
 
   console.log(data);
 })();
@@ -76,12 +80,14 @@ import { NobatvakilServerSdk } from 'nobatvakil-server-sdk';
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
-  const data = await nobatvakilServerSdk.calls.list();
+  const data = await serverSdk.calls.list();
 
   console.log(data);
 })();

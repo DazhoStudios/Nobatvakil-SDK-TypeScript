@@ -19,12 +19,14 @@ A list of all methods in the `CartsService` service. Click on the method name to
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
-  const data = await nobatvakilServerSdk.carts.list();
+  const data = await serverSdk.carts.list();
 
   console.log(data);
 })();
@@ -48,16 +50,18 @@ import { NobatvakilServerSdk } from 'nobatvakil-server-sdk';
 **Example Usage Code Snippet**
 
 ```typescript
-import { CartsRemoveRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { CartsRemoveRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const cartsRemoveRequest: CartsRemoveRequest = {
     id: '1',
   };
 
-  const data = await nobatvakilServerSdk.carts.remove(cartsRemoveRequest);
+  const data = await serverSdk.carts.remove(cartsRemoveRequest);
 
   console.log(data);
 })();

@@ -26,10 +26,12 @@ A list of all methods in the `LawyerProfileService` service. Click on the method
 **Example Usage Code Snippet**
 
 ```typescript
-import { LawyerProfileUpdateProfileRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { LawyerProfileUpdateProfileRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const lawyerProfileUpdateProfileRequest: LawyerProfileUpdateProfileRequest = {
     id: '3',
@@ -41,9 +43,7 @@ import { LawyerProfileUpdateProfileRequest, NobatvakilServerSdk } from 'nobatvak
     email: 'vandadmarket@gmail.com',
   };
 
-  const data = await nobatvakilServerSdk.lawyerProfile.updateProfile(
-    lawyerProfileUpdateProfileRequest,
-  );
+  const data = await serverSdk.lawyerProfile.updateProfile(lawyerProfileUpdateProfileRequest);
 
   console.log(data);
 })();
@@ -67,19 +67,19 @@ import { LawyerProfileUpdateProfileRequest, NobatvakilServerSdk } from 'nobatvak
 **Example Usage Code Snippet**
 
 ```typescript
-import { LawyerProfileUpdateAvatarRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { LawyerProfileUpdateAvatarRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const lawyerProfileUpdateAvatarRequest: LawyerProfileUpdateAvatarRequest = {
     id: '2',
     image: new ArrayBuffer(0),
   };
 
-  const data = await nobatvakilServerSdk.lawyerProfile.updateAvatar(
-    lawyerProfileUpdateAvatarRequest,
-  );
+  const data = await serverSdk.lawyerProfile.updateAvatar(lawyerProfileUpdateAvatarRequest);
 
   console.log(data);
 })();
@@ -103,16 +103,18 @@ import { LawyerProfileUpdateAvatarRequest, NobatvakilServerSdk } from 'nobatvaki
 **Example Usage Code Snippet**
 
 ```typescript
-import { DeleteAvatarRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { DeleteAvatarRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const deleteAvatarRequest: DeleteAvatarRequest = {
     id: '1',
   };
 
-  const data = await nobatvakilServerSdk.lawyerProfile.deleteAvatar(deleteAvatarRequest);
+  const data = await serverSdk.lawyerProfile.deleteAvatar(deleteAvatarRequest);
 
   console.log(data);
 })();

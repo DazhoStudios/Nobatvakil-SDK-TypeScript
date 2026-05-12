@@ -1,9 +1,9 @@
 {
-  "name": "nobatvakil_server_sdk",
+  "name": "server_sdk",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "nobatvakil-server-sdk": "file:../",
+    "server-sdk": "file:../",
     "zod": "3.22.0"
   },
   "scripts": {

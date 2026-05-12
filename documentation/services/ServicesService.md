@@ -25,16 +25,18 @@ A list of all methods in the `ServicesService` service. Click on the method name
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk, ServicesListsRequest } from 'nobatvakil-server-sdk';
+import { ServerSdk, ServicesListsRequest } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const servicesListsRequest: ServicesListsRequest = {
     id: '2',
   };
 
-  const data = await nobatvakilServerSdk.services.lists(servicesListsRequest);
+  const data = await serverSdk.services.lists(servicesListsRequest);
 
   console.log(data);
 })();
@@ -58,10 +60,12 @@ import { NobatvakilServerSdk, ServicesListsRequest } from 'nobatvakil-server-sdk
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk, ServicesUpdateRequest } from 'nobatvakil-server-sdk';
+import { ServerSdk, ServicesUpdateRequest } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const servicesUpdateRequest: ServicesUpdateRequest = {
     id: '37',
@@ -75,7 +79,7 @@ import { NobatvakilServerSdk, ServicesUpdateRequest } from 'nobatvakil-server-sd
     status: 'active',
   };
 
-  const data = await nobatvakilServerSdk.services.update(servicesUpdateRequest);
+  const data = await serverSdk.services.update(servicesUpdateRequest);
 
   console.log(data);
 })();

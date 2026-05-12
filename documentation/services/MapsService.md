@@ -19,12 +19,14 @@ A list of all methods in the `MapsService` service. Click on the method name to 
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
-  const data = await nobatvakilServerSdk.maps.list();
+  const data = await serverSdk.maps.list();
 
   console.log(data);
 })();
@@ -48,16 +50,18 @@ import { NobatvakilServerSdk } from 'nobatvakil-server-sdk';
 **Example Usage Code Snippet**
 
 ```typescript
-import { MapsInfoRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { MapsInfoRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const mapsInfoRequest: MapsInfoRequest = {
     id: '1',
   };
 
-  const data = await nobatvakilServerSdk.maps.info(mapsInfoRequest);
+  const data = await serverSdk.maps.info(mapsInfoRequest);
 
   console.log(data);
 })();

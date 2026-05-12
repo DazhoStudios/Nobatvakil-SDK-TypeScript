@@ -24,13 +24,12 @@ A list of all methods in the `UserDashBoardOrdersCommentsService` service. Click
 **Example Usage Code Snippet**
 
 ```typescript
-import {
-  NobatvakilServerSdk,
-  UserDashBoardOrdersCommentsCreateRequest,
-} from 'nobatvakil-server-sdk';
+import { ServerSdk, UserDashBoardOrdersCommentsCreateRequest } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const userDashBoardOrdersCommentsCreateRequest: UserDashBoardOrdersCommentsCreateRequest = {
     lawyerId: '1',
@@ -41,7 +40,7 @@ import {
     suggested: 'yes',
   };
 
-  const data = await nobatvakilServerSdk.userDashBoardOrdersComments.create(
+  const data = await serverSdk.userDashBoardOrdersComments.create(
     userDashBoardOrdersCommentsCreateRequest,
   );
 

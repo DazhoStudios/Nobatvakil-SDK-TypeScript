@@ -27,16 +27,18 @@ A list of all methods in the `OfficeRoomsService` service. Click on the method n
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk, OfficeRoomsListRequest } from 'nobatvakil-server-sdk';
+import { OfficeRoomsListRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const officeRoomsListRequest: OfficeRoomsListRequest = {
     lawyerId: '1',
   };
 
-  const data = await nobatvakilServerSdk.officeRooms.list(officeRoomsListRequest);
+  const data = await serverSdk.officeRooms.list(officeRoomsListRequest);
 
   console.log(data);
 })();
@@ -60,10 +62,12 @@ import { NobatvakilServerSdk, OfficeRoomsListRequest } from 'nobatvakil-server-s
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk, OfficeRoomsCreateRequest } from 'nobatvakil-server-sdk';
+import { OfficeRoomsCreateRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const officeRoomsCreateRequest: OfficeRoomsCreateRequest = {
     lawyerId: '1',
@@ -73,7 +77,7 @@ import { NobatvakilServerSdk, OfficeRoomsCreateRequest } from 'nobatvakil-server
     locationLink: 'https://neshan.org/map/4412s1d4f2d',
   };
 
-  const data = await nobatvakilServerSdk.officeRooms.create(officeRoomsCreateRequest);
+  const data = await serverSdk.officeRooms.create(officeRoomsCreateRequest);
 
   console.log(data);
 })();
@@ -99,10 +103,12 @@ import { NobatvakilServerSdk, OfficeRoomsCreateRequest } from 'nobatvakil-server
 **Example Usage Code Snippet**
 
 ```typescript
-import { EditRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { EditRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const editRequest: EditRequest = {
     lawyerId: '3',
@@ -113,7 +119,7 @@ import { EditRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
     locationLink: 'https://neshan.org/map/dhvcdhsvc',
   };
 
-  const data = await nobatvakilServerSdk.officeRooms.edit(editRequest);
+  const data = await serverSdk.officeRooms.edit(editRequest);
 
   console.log(data);
 })();
@@ -139,17 +145,19 @@ import { EditRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk, OfficeRoomsDeleteRequest } from 'nobatvakil-server-sdk';
+import { OfficeRoomsDeleteRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const officeRoomsDeleteRequest: OfficeRoomsDeleteRequest = {
     lawyerId: '3',
     addressId: '1',
   };
 
-  const data = await nobatvakilServerSdk.officeRooms.delete_(officeRoomsDeleteRequest);
+  const data = await serverSdk.officeRooms.delete_(officeRoomsDeleteRequest);
 
   console.log(data);
 })();

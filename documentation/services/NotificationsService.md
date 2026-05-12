@@ -19,12 +19,14 @@ A list of all methods in the `NotificationsService` service. Click on the method
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
-  const data = await nobatvakilServerSdk.notifications.list();
+  const data = await serverSdk.notifications.list();
 
   console.log(data);
 })();
@@ -48,10 +50,12 @@ import { NobatvakilServerSdk } from 'nobatvakil-server-sdk';
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk, NotificationsUpdateRequest } from 'nobatvakil-server-sdk';
+import { NotificationsUpdateRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const notificationsUpdateRequest: NotificationsUpdateRequest = {
     pusherEnabled: 'true',
@@ -59,7 +63,7 @@ import { NobatvakilServerSdk, NotificationsUpdateRequest } from 'nobatvakil-serv
     emailEnabled: 'true',
   };
 
-  const data = await nobatvakilServerSdk.notifications.update(notificationsUpdateRequest);
+  const data = await serverSdk.notifications.update(notificationsUpdateRequest);
 
   console.log(data);
 })();

@@ -25,18 +25,18 @@ A list of all methods in the `LawyerDashboardSignaturesService` service. Click o
 **Example Usage Code Snippet**
 
 ```typescript
-import { LawyerDashboardSignaturesListRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { LawyerDashboardSignaturesListRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const lawyerDashboardSignaturesListRequest: LawyerDashboardSignaturesListRequest = {
     id: '2',
   };
 
-  const data = await nobatvakilServerSdk.lawyerDashboardSignatures.list(
-    lawyerDashboardSignaturesListRequest,
-  );
+  const data = await serverSdk.lawyerDashboardSignatures.list(lawyerDashboardSignaturesListRequest);
 
   console.log(data);
 })();
@@ -60,10 +60,12 @@ import { LawyerDashboardSignaturesListRequest, NobatvakilServerSdk } from 'nobat
 **Example Usage Code Snippet**
 
 ```typescript
-import { LawyerDashboardSignaturesCreateRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { LawyerDashboardSignaturesCreateRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const lawyerDashboardSignaturesCreateRequest: LawyerDashboardSignaturesCreateRequest = {
     lawyerId: '2',
@@ -71,7 +73,7 @@ import { LawyerDashboardSignaturesCreateRequest, NobatvakilServerSdk } from 'nob
     image: new ArrayBuffer(0),
   };
 
-  const data = await nobatvakilServerSdk.lawyerDashboardSignatures.create(
+  const data = await serverSdk.lawyerDashboardSignatures.create(
     lawyerDashboardSignaturesCreateRequest,
   );
 
