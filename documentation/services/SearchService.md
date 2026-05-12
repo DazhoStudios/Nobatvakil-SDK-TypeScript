@@ -24,16 +24,18 @@ A list of all methods in the `SearchService` service. Click on the method name t
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk, SearchHeaderRequest } from 'nobatvakil-server-sdk';
+import { SearchHeaderRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const searchHeaderRequest: SearchHeaderRequest = {
     name: 'وکیل',
   };
 
-  const data = await nobatvakilServerSdk.search.searchHeader(searchHeaderRequest);
+  const data = await serverSdk.search.searchHeader(searchHeaderRequest);
 
   console.log(data);
 })();

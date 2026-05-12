@@ -52,7 +52,7 @@ export class RequestBuilder<Page extends unknown[] = unknown[]> {
     };
     this.addHeaderParam({
       key: 'User-Agent',
-      value: 'postman-codegen/1.1.1 nobatvakil-server-sdk/1.0.0 (typescript)',
+      value: 'postman-codegen/1.1.2 server-sdk/1.0.0 (typescript)',
     });
   }
 
@@ -158,7 +158,7 @@ export class RequestBuilder<Page extends unknown[] = unknown[]> {
 
     this.params.headers.set('Authorization', {
       key: 'Authorization',
-      value: `${prefix ?? 'BEARER'} ${accessToken}`,
+      value: `${prefix ?? 'Bearer'} ${accessToken}`,
       explode: false,
       style: SerializationStyle.SIMPLE,
       encode: true,

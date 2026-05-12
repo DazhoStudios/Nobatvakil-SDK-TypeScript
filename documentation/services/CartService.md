@@ -30,10 +30,12 @@ A list of all methods in the `CartService` service. Click on the method name to 
 **Example Usage Code Snippet**
 
 ```typescript
-import { CartCreateRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { CartCreateRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const cartCreateRequest: CartCreateRequest = {
     lawyerId: '3',
@@ -41,7 +43,7 @@ import { CartCreateRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
     dateId: '1',
   };
 
-  const data = await nobatvakilServerSdk.cart.create(cartCreateRequest);
+  const data = await serverSdk.cart.create(cartCreateRequest);
 
   console.log(data);
 })();
@@ -65,16 +67,18 @@ import { CartCreateRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
 **Example Usage Code Snippet**
 
 ```typescript
-import { CartInfoRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { CartInfoRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const cartInfoRequest: CartInfoRequest = {
     id: '150',
   };
 
-  const data = await nobatvakilServerSdk.cart.info(cartInfoRequest);
+  const data = await serverSdk.cart.info(cartInfoRequest);
 
   console.log(data);
 })();
@@ -98,17 +102,19 @@ import { CartInfoRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
 **Example Usage Code Snippet**
 
 ```typescript
-import { AddCouponRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { AddCouponRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const addCouponRequest: AddCouponRequest = {
     cartId: '1',
     code: 'hediyeh',
   };
 
-  const data = await nobatvakilServerSdk.cart.addCoupon(addCouponRequest);
+  const data = await serverSdk.cart.addCoupon(addCouponRequest);
 
   console.log(data);
 })();
@@ -132,16 +138,18 @@ import { AddCouponRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk, RemoveCouponRequest } from 'nobatvakil-server-sdk';
+import { RemoveCouponRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const removeCouponRequest: RemoveCouponRequest = {
     id: '1',
   };
 
-  const data = await nobatvakilServerSdk.cart.removeCoupon(removeCouponRequest);
+  const data = await serverSdk.cart.removeCoupon(removeCouponRequest);
 
   console.log(data);
 })();
@@ -165,17 +173,19 @@ import { NobatvakilServerSdk, RemoveCouponRequest } from 'nobatvakil-server-sdk'
 **Example Usage Code Snippet**
 
 ```typescript
-import { CartPayRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { CartPayRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const cartPayRequest: CartPayRequest = {
     id: '175',
     payMode: 'zarinpal',
   };
 
-  const data = await nobatvakilServerSdk.cart.pay(cartPayRequest);
+  const data = await serverSdk.cart.pay(cartPayRequest);
 
   console.log(data);
 })();

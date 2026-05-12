@@ -21,12 +21,14 @@ A list of all methods in the `TicketsService` service. Click on the method name 
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
-  const data = await nobatvakilServerSdk.tickets.lists();
+  const data = await serverSdk.tickets.lists();
 
   console.log(data);
 })();
@@ -50,17 +52,19 @@ import { NobatvakilServerSdk } from 'nobatvakil-server-sdk';
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk, TicketsCreateRequest } from 'nobatvakil-server-sdk';
+import { ServerSdk, TicketsCreateRequest } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const ticketsCreateRequest: TicketsCreateRequest = {
     subject: 'تست سیستم',
     message: 'سلام، مشکل دارم',
   };
 
-  const data = await nobatvakilServerSdk.tickets.create(ticketsCreateRequest);
+  const data = await serverSdk.tickets.create(ticketsCreateRequest);
 
   console.log(data);
 })();
@@ -78,12 +82,14 @@ import { NobatvakilServerSdk, TicketsCreateRequest } from 'nobatvakil-server-sdk
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
-  const data = await nobatvakilServerSdk.tickets.getTicketMessage();
+  const data = await serverSdk.tickets.getTicketMessage();
 
   console.log(data);
 })();
@@ -107,16 +113,18 @@ import { NobatvakilServerSdk } from 'nobatvakil-server-sdk';
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk, TicketsSendMessageRequest } from 'nobatvakil-server-sdk';
+import { ServerSdk, TicketsSendMessageRequest } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const ticketsSendMessageRequest: TicketsSendMessageRequest = {
     message: 'پیام',
   };
 
-  const data = await nobatvakilServerSdk.tickets.sendMessage(ticketsSendMessageRequest);
+  const data = await serverSdk.tickets.sendMessage(ticketsSendMessageRequest);
 
   console.log(data);
 })();

@@ -21,12 +21,14 @@ A list of all methods in the `UserService` service. Click on the method name to 
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
-  const data = await nobatvakilServerSdk.user.info();
+  const data = await serverSdk.user.info();
 
   console.log(data);
 })();
@@ -50,10 +52,12 @@ import { NobatvakilServerSdk } from 'nobatvakil-server-sdk';
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk, WelcomeWizardRequest } from 'nobatvakil-server-sdk';
+import { ServerSdk, WelcomeWizardRequest } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const welcomeWizardRequest: WelcomeWizardRequest = {
     firstName: 'Yousef',
@@ -63,7 +67,7 @@ import { NobatvakilServerSdk, WelcomeWizardRequest } from 'nobatvakil-server-sdk
     gender: 'male',
   };
 
-  const data = await nobatvakilServerSdk.user.welcomeWizard(welcomeWizardRequest);
+  const data = await serverSdk.user.welcomeWizard(welcomeWizardRequest);
 
   console.log(data);
 })();

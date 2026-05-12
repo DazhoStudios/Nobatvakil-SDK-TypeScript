@@ -20,12 +20,14 @@ A list of all methods in the `ChatsService` service. Click on the method name to
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
-  const data = await nobatvakilServerSdk.chats.list();
+  const data = await serverSdk.chats.list();
 
   console.log(data);
 })();
@@ -49,16 +51,18 @@ import { NobatvakilServerSdk } from 'nobatvakil-server-sdk';
 **Example Usage Code Snippet**
 
 ```typescript
-import { MessageListRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { MessageListRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const messageListRequest: MessageListRequest = {
     id: '3',
   };
 
-  const data = await nobatvakilServerSdk.chats.messageList(messageListRequest);
+  const data = await serverSdk.chats.messageList(messageListRequest);
 
   console.log(data);
 })();
@@ -82,10 +86,12 @@ import { MessageListRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
 **Example Usage Code Snippet**
 
 ```typescript
-import { ChatsSendMessageRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { ChatsSendMessageRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const chatsSendMessageRequest: ChatsSendMessageRequest = {
     id: '1',
@@ -93,7 +99,7 @@ import { ChatsSendMessageRequest, NobatvakilServerSdk } from 'nobatvakil-server-
     files: new ArrayBuffer(0),
   };
 
-  const data = await nobatvakilServerSdk.chats.sendMessage(chatsSendMessageRequest);
+  const data = await serverSdk.chats.sendMessage(chatsSendMessageRequest);
 
   console.log(data);
 })();

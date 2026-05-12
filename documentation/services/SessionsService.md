@@ -20,12 +20,14 @@ A list of all methods in the `SessionsService` service. Click on the method name
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
-  const data = await nobatvakilServerSdk.sessions.list();
+  const data = await serverSdk.sessions.list();
 
   console.log(data);
 })();
@@ -49,16 +51,18 @@ import { NobatvakilServerSdk } from 'nobatvakil-server-sdk';
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk, SessionsRemoveRequest } from 'nobatvakil-server-sdk';
+import { ServerSdk, SessionsRemoveRequest } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const sessionsRemoveRequest: SessionsRemoveRequest = {
     id: '1',
   };
 
-  const data = await nobatvakilServerSdk.sessions.remove(sessionsRemoveRequest);
+  const data = await serverSdk.sessions.remove(sessionsRemoveRequest);
 
   console.log(data);
 })();
@@ -76,12 +80,14 @@ import { NobatvakilServerSdk, SessionsRemoveRequest } from 'nobatvakil-server-sd
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
-  const data = await nobatvakilServerSdk.sessions.removeAll();
+  const data = await serverSdk.sessions.removeAll();
 
   console.log(data);
 })();

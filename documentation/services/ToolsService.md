@@ -27,17 +27,19 @@ A list of all methods in the `ToolsService` service. Click on the method name to
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk, OfferRequest } from 'nobatvakil-server-sdk';
+import { OfferRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const offerRequest: OfferRequest = {
     fromPeer: 'from_peer',
     sdp: 'sdp',
   };
 
-  const data = await nobatvakilServerSdk.tools.offer(offerRequest);
+  const data = await serverSdk.tools.offer(offerRequest);
 
   console.log(data);
 })();
@@ -61,17 +63,19 @@ import { NobatvakilServerSdk, OfferRequest } from 'nobatvakil-server-sdk';
 **Example Usage Code Snippet**
 
 ```typescript
-import { AnswerRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { AnswerRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const answerRequest: AnswerRequest = {
     toPeer: 'to_peer',
     sdp: 'sdp',
   };
 
-  const data = await nobatvakilServerSdk.tools.answer(answerRequest);
+  const data = await serverSdk.tools.answer(answerRequest);
 
   console.log(data);
 })();
@@ -89,12 +93,14 @@ import { AnswerRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
-  const data = await nobatvakilServerSdk.tools.ice();
+  const data = await serverSdk.tools.ice();
 
   console.log(data);
 })();
@@ -118,16 +124,18 @@ import { NobatvakilServerSdk } from 'nobatvakil-server-sdk';
 **Example Usage Code Snippet**
 
 ```typescript
-import { MemberOfRoomRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { MemberOfRoomRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const memberOfRoomRequest: MemberOfRoomRequest = {
     peerId: 'peer_id',
   };
 
-  const data = await nobatvakilServerSdk.tools.memberOfRoom(memberOfRoomRequest);
+  const data = await serverSdk.tools.memberOfRoom(memberOfRoomRequest);
 
   console.log(data);
 })();

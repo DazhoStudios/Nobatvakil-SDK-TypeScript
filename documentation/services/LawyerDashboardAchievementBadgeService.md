@@ -24,19 +24,18 @@ A list of all methods in the `LawyerDashboardAchievementBadgeService` service. C
 **Example Usage Code Snippet**
 
 ```typescript
-import {
-  LawyerDashboardAchievementBadgeListRequest,
-  NobatvakilServerSdk,
-} from 'nobatvakil-server-sdk';
+import { LawyerDashboardAchievementBadgeListRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const lawyerDashboardAchievementBadgeListRequest: LawyerDashboardAchievementBadgeListRequest = {
     lawyerId: '2',
   };
 
-  const data = await nobatvakilServerSdk.lawyerDashboardAchievementBadge.list(
+  const data = await serverSdk.lawyerDashboardAchievementBadge.list(
     lawyerDashboardAchievementBadgeListRequest,
   );
 

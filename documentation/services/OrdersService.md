@@ -27,16 +27,18 @@ A list of all methods in the `OrdersService` service. Click on the method name t
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk, OrdersListsRequest } from 'nobatvakil-server-sdk';
+import { OrdersListsRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const ordersListsRequest: OrdersListsRequest = {
     page: '1',
   };
 
-  const data = await nobatvakilServerSdk.orders.lists(ordersListsRequest);
+  const data = await serverSdk.orders.lists(ordersListsRequest);
 
   console.log(data);
 })();
@@ -60,16 +62,18 @@ import { NobatvakilServerSdk, OrdersListsRequest } from 'nobatvakil-server-sdk';
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk, OrdersInfoRequest } from 'nobatvakil-server-sdk';
+import { OrdersInfoRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const ordersInfoRequest: OrdersInfoRequest = {
     id: '1',
   };
 
-  const data = await nobatvakilServerSdk.orders.info(ordersInfoRequest);
+  const data = await serverSdk.orders.info(ordersInfoRequest);
 
   console.log(data);
 })();

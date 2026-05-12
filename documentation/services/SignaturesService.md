@@ -25,16 +25,18 @@ A list of all methods in the `SignaturesService` service. Click on the method na
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk, SignaturesListRequest } from 'nobatvakil-server-sdk';
+import { ServerSdk, SignaturesListRequest } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const signaturesListRequest: SignaturesListRequest = {
     id: '2',
   };
 
-  const data = await nobatvakilServerSdk.signatures.list(signaturesListRequest);
+  const data = await serverSdk.signatures.list(signaturesListRequest);
 
   console.log(data);
 })();
@@ -58,17 +60,19 @@ import { NobatvakilServerSdk, SignaturesListRequest } from 'nobatvakil-server-sd
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk, SignaturesCreateRequest } from 'nobatvakil-server-sdk';
+import { ServerSdk, SignaturesCreateRequest } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const signaturesCreateRequest: SignaturesCreateRequest = {
     title: 'امضای آقای مقدم',
     image: new ArrayBuffer(0),
   };
 
-  const data = await nobatvakilServerSdk.signatures.create(signaturesCreateRequest);
+  const data = await serverSdk.signatures.create(signaturesCreateRequest);
 
   console.log(data);
 })();

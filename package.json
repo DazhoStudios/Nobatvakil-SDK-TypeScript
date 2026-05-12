@@ -1,5 +1,5 @@
 {
-  "name": "nobatvakil-server-sdk",
+  "name": "server-sdk",
   "version": "1.0.0",
   "description": "This Folder Provided for Production With Liara  [Liara Console](https://console.liara.run)",
   "source": "./src/index.ts",

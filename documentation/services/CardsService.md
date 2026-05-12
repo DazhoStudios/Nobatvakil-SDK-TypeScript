@@ -25,16 +25,18 @@ A list of all methods in the `CardsService` service. Click on the method name to
 **Example Usage Code Snippet**
 
 ```typescript
-import { CardsListRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { CardsListRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const cardsListRequest: CardsListRequest = {
-    lawyerId: '1',
+    lawyerId: '79',
   };
 
-  const data = await nobatvakilServerSdk.cards.list(cardsListRequest);
+  const data = await serverSdk.cards.list(cardsListRequest);
 
   console.log(data);
 })();
@@ -58,17 +60,19 @@ import { CardsListRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
 **Example Usage Code Snippet**
 
 ```typescript
-import { CardsCreateRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { CardsCreateRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const cardsCreateRequest: CardsCreateRequest = {
     lawyerId: '1',
     shebaNumber: '6022365465456454654654654',
   };
 
-  const data = await nobatvakilServerSdk.cards.create(cardsCreateRequest);
+  const data = await serverSdk.cards.create(cardsCreateRequest);
 
   console.log(data);
 })();

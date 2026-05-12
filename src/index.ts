@@ -105,7 +105,7 @@ export * from './services/faq';
 export * from './http';
 export { Environment } from './http/environment';
 
-export class NobatvakilServerSdk {
+export class ServerSdk {
   public readonly auth: AuthService;
 
   public readonly states: StatesService;

@@ -24,10 +24,12 @@ A list of all methods in the `FaqService` service. Click on the method name to v
 **Example Usage Code Snippet**
 
 ```typescript
-import { FaqListRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { FaqListRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const faqListRequest: FaqListRequest = {
     category: 'family',
@@ -37,7 +39,7 @@ import { FaqListRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
     perPage: '100',
   };
 
-  const data = await nobatvakilServerSdk.faq.faqList(faqListRequest);
+  const data = await serverSdk.faq.faqList(faqListRequest);
 
   console.log(data);
 })();

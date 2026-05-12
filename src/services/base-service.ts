@@ -28,8 +28,41 @@ export class BaseService {
   }
 
   /**
+   * Recursively merges two objects. Plain nested objects are merged key-by-key so a
+   * partial override (e.g. `{ retry: { attempts: 5 } }`) only overwrites the specified
+   * keys instead of replacing the whole nested object. Arrays and non-plain values are
+   * replaced wholesale.
+   *
+   * Override keys with the value `undefined` are skipped so the base value is preserved,
+   * matching the common JS merge idiom (e.g. lodash.merge). To explicitly clear a key,
+   * assign `null` or omit the key from the override entirely.
+   */
+  private static deepMerge<T extends object>(base: T, override: Partial<T>): T {
+    const result = { ...base } as Record<string, unknown>;
+    for (const [key, value] of Object.entries(override)) {
+      const existing = result[key];
+      if (BaseService.isPlainObject(value) && BaseService.isPlainObject(existing)) {
+        result[key] = BaseService.deepMerge(existing, value);
+      } else if (value !== undefined) {
+        result[key] = value;
+      }
+    }
+    return result as T;
+  }
+
+  private static isPlainObject(value: unknown): value is Record<string, unknown> {
+    return (
+      typeof value === 'object' &&
+      value !== null &&
+      !Array.isArray(value) &&
+      Object.getPrototypeOf(value) === Object.prototype
+    );
+  }
+
+  /**
    * Resolves configuration from the hierarchy: requestConfig > methodConfig > serviceConfig > sdkConfig
-   * Merges all config levels into a single resolved config object.
+   * Deep-merges all config levels so partial nested overrides (e.g. `{ retry: { attempts: 5 } }`)
+   * preserve unoverridden sibling keys from the SDK default.
    * @param methodConfig - Method-level configuration override
    * @param requestConfig - Request-level configuration override
    * @returns Merged configuration with all overrides applied
@@ -38,12 +71,17 @@ export class BaseService {
     methodConfig?: Partial<SdkConfig>,
     requestConfig?: Partial<SdkConfig>,
   ): SdkConfig {
-    return {
-      ...this.config1,
-      ...this.serviceConfig,
-      ...methodConfig,
-      ...requestConfig,
-    } as SdkConfig;
+    let merged: SdkConfig = { ...this.config1 } as SdkConfig;
+    if (this.serviceConfig) {
+      merged = BaseService.deepMerge(merged, this.serviceConfig);
+    }
+    if (methodConfig) {
+      merged = BaseService.deepMerge(merged, methodConfig);
+    }
+    if (requestConfig) {
+      merged = BaseService.deepMerge(merged, requestConfig);
+    }
+    return merged;
   }
 
   set baseUrl(baseUrl: string) {

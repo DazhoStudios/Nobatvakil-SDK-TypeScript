@@ -19,12 +19,14 @@ A list of all methods in the `ConfigService` service. Click on the method name t
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
-  const data = await nobatvakilServerSdk.config.list();
+  const data = await serverSdk.config.list();
 
   console.log(data);
 })();
@@ -48,16 +50,18 @@ import { NobatvakilServerSdk } from 'nobatvakil-server-sdk';
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk, OneRequest } from 'nobatvakil-server-sdk';
+import { OneRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const oneRequest: OneRequest = {
     name: 'enamad_code',
   };
 
-  const data = await nobatvakilServerSdk.config.one(oneRequest);
+  const data = await serverSdk.config.one(oneRequest);
 
   console.log(data);
 })();

@@ -25,18 +25,18 @@ A list of all methods in the `LawyerDashboardWalletService` service. Click on th
 **Example Usage Code Snippet**
 
 ```typescript
-import { LawyerDashboardWalletInfoRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { LawyerDashboardWalletInfoRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const lawyerDashboardWalletInfoRequest: LawyerDashboardWalletInfoRequest = {
     lawyerId: '1',
   };
 
-  const data = await nobatvakilServerSdk.lawyerDashboardWallet.info(
-    lawyerDashboardWalletInfoRequest,
-  );
+  const data = await serverSdk.lawyerDashboardWallet.info(lawyerDashboardWalletInfoRequest);
 
   console.log(data);
 })();
@@ -60,17 +60,19 @@ import { LawyerDashboardWalletInfoRequest, NobatvakilServerSdk } from 'nobatvaki
 **Example Usage Code Snippet**
 
 ```typescript
-import { AddBalanceRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { AddBalanceRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const addBalanceRequest: AddBalanceRequest = {
     lawyerId: '1',
     amount: '100000',
   };
 
-  const data = await nobatvakilServerSdk.lawyerDashboardWallet.addBalance(addBalanceRequest);
+  const data = await serverSdk.lawyerDashboardWallet.addBalance(addBalanceRequest);
 
   console.log(data);
 })();

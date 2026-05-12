@@ -18,12 +18,14 @@ A list of all methods in the `CategoryService` service. Click on the method name
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
-  const data = await nobatvakilServerSdk.category.getCategories();
+  const data = await serverSdk.category.getCategories();
 
   console.log(data);
 })();

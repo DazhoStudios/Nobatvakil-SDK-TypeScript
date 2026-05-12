@@ -31,10 +31,12 @@ A list of all methods in the `LawyerService` service. Click on the method name t
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk, SearchRequest } from 'nobatvakil-server-sdk';
+import { SearchRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const searchRequest: SearchRequest = {
     name: 'احمد',
@@ -50,7 +52,7 @@ import { NobatvakilServerSdk, SearchRequest } from 'nobatvakil-server-sdk';
     typeId: '1',
   };
 
-  const data = await nobatvakilServerSdk.lawyer.search(searchRequest);
+  const data = await serverSdk.lawyer.search(searchRequest);
 
   console.log(data);
 })();
@@ -76,16 +78,18 @@ import { NobatvakilServerSdk, SearchRequest } from 'nobatvakil-server-sdk';
 **Example Usage Code Snippet**
 
 ```typescript
-import { LawyerInfoRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { LawyerInfoRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const lawyerInfoRequest: LawyerInfoRequest = {
     id: '1',
   };
 
-  const data = await nobatvakilServerSdk.lawyer.info(lawyerInfoRequest);
+  const data = await serverSdk.lawyer.info(lawyerInfoRequest);
 
   console.log(data);
 })();
@@ -109,16 +113,18 @@ import { LawyerInfoRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk, ServicesRequest } from 'nobatvakil-server-sdk';
+import { ServerSdk, ServicesRequest } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const servicesRequest: ServicesRequest = {
     id: '19',
   };
 
-  const data = await nobatvakilServerSdk.lawyer.services(servicesRequest);
+  const data = await serverSdk.lawyer.services(servicesRequest);
 
   console.log(data);
 })();
@@ -142,10 +148,12 @@ import { NobatvakilServerSdk, ServicesRequest } from 'nobatvakil-server-sdk';
 **Example Usage Code Snippet**
 
 ```typescript
-import { LawyerCreateRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { LawyerCreateRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const lawyerCreateRequest: LawyerCreateRequest = {
     firstName: 'test',
@@ -165,7 +173,7 @@ import { LawyerCreateRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk'
     type: 'trainee',
   };
 
-  const data = await nobatvakilServerSdk.lawyer.create(lawyerCreateRequest);
+  const data = await serverSdk.lawyer.create(lawyerCreateRequest);
 
   console.log(data);
 })();
@@ -189,16 +197,18 @@ import { LawyerCreateRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk'
 **Example Usage Code Snippet**
 
 ```typescript
-import { LawyerBoostListRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { LawyerBoostListRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const lawyerBoostListRequest: LawyerBoostListRequest = {
     id: '1',
   };
 
-  const data = await nobatvakilServerSdk.lawyer.boostList(lawyerBoostListRequest);
+  const data = await serverSdk.lawyer.boostList(lawyerBoostListRequest);
 
   console.log(data);
 })();
@@ -224,17 +234,19 @@ import { LawyerBoostListRequest, NobatvakilServerSdk } from 'nobatvakil-server-s
 **Example Usage Code Snippet**
 
 ```typescript
-import { NobatvakilServerSdk, TimesRequest } from 'nobatvakil-server-sdk';
+import { ServerSdk, TimesRequest } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const timesRequest: TimesRequest = {
     id: '1',
     serviceId: '1',
   };
 
-  const data = await nobatvakilServerSdk.lawyer.times(timesRequest);
+  const data = await serverSdk.lawyer.times(timesRequest);
 
   console.log(data);
 })();

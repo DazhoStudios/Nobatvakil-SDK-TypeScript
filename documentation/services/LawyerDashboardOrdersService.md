@@ -25,19 +25,19 @@ A list of all methods in the `LawyerDashboardOrdersService` service. Click on th
 **Example Usage Code Snippet**
 
 ```typescript
-import { LawyerDashboardOrdersInfoRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { LawyerDashboardOrdersInfoRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const lawyerDashboardOrdersInfoRequest: LawyerDashboardOrdersInfoRequest = {
     id: '1',
     lawyerId: '1',
   };
 
-  const data = await nobatvakilServerSdk.lawyerDashboardOrders.info(
-    lawyerDashboardOrdersInfoRequest,
-  );
+  const data = await serverSdk.lawyerDashboardOrders.info(lawyerDashboardOrdersInfoRequest);
 
   console.log(data);
 })();
@@ -61,18 +61,18 @@ import { LawyerDashboardOrdersInfoRequest, NobatvakilServerSdk } from 'nobatvaki
 **Example Usage Code Snippet**
 
 ```typescript
-import { LawyerDashboardOrdersListsRequest, NobatvakilServerSdk } from 'nobatvakil-server-sdk';
+import { LawyerDashboardOrdersListsRequest, ServerSdk } from 'server-sdk';
 
 (async () => {
-  const nobatvakilServerSdk = new NobatvakilServerSdk({});
+  const serverSdk = new ServerSdk({
+    token: 'YOUR_TOKEN',
+  });
 
   const lawyerDashboardOrdersListsRequest: LawyerDashboardOrdersListsRequest = {
     id: '19',
   };
 
-  const data = await nobatvakilServerSdk.lawyerDashboardOrders.lists(
-    lawyerDashboardOrdersListsRequest,
-  );
+  const data = await serverSdk.lawyerDashboardOrders.lists(lawyerDashboardOrdersListsRequest);
 
   console.log(data);
 })();
