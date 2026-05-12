@@ -1,10 +1,10 @@
-# Nobatvakil sdk TypeScript SDK 1.0.0
+# ServerSdk TypeScript SDK 1.0.1
 
 Welcome to the ServerSdk SDK documentation. This guide will help you get started with integrating and using the ServerSdk SDK in your project.
 
 ## Versions
 
-- SDK version: `1.0.0`
+- SDK version: `1.0.1`
 
 ## About the API
 
@@ -152,6 +152,7 @@ The SDK provides various services to interact with the API.
 | [MapsService](documentation/services/MapsService.md)                                                                 |
 | [TicketsService](documentation/services/TicketsService.md)                                                           |
 | [FaqService](documentation/services/FaqService.md)                                                                   |
+| [UpService](documentation/services/UpService.md)                                                                     |
 
 </details>
 
@@ -239,5 +240,6 @@ The SDK includes several models that represent the data structures used in API r
 | [TicketsCreateRequest](documentation/models/TicketsCreateRequest.md)                                                           |             |
 | [TicketsSendMessageRequest](documentation/models/TicketsSendMessageRequest.md)                                                 |             |
 | [FaqListRequest](documentation/models/FaqListRequest.md)                                                                       |             |
+| [CheckUpRequest](documentation/models/CheckUpRequest.md)                                                                       |             |
 
 </details>
