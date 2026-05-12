@@ -1,4 +1,4 @@
-# ServerSdk TypeScript SDK 1.0.0
+# Nobatvakil sdk TypeScript SDK 1.0.0
 
 Welcome to the ServerSdk SDK documentation. This guide will help you get started with integrating and using the ServerSdk SDK in your project.
 
