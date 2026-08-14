@@ -4,9 +4,9 @@
  */
 export enum Environment {
   /** DEFAULT environment base URL */
-  DEFAULT = 'https://{{domin_server}}',
+  DEFAULT = 'https://domin_server',
   /** DOMIN_SERVER environment base URL */
-  DOMIN_SERVER = 'https://{{domin_server}}',
+  DOMIN_SERVER = 'https://domin_server',
   /** DOMIN_LOCAL environment base URL */
-  DOMIN_LOCAL = 'https://{{domin_local}}',
+  DOMIN_LOCAL = 'https://domin_local',
 }
