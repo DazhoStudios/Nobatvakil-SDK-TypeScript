@@ -1,10 +1,10 @@
-# Nobatvakil sdk TypeScript SDK 1.0.3
+# ServerSdk TypeScript SDK 3.0.0
 
 Welcome to the ServerSdk SDK documentation. This guide will help you get started with integrating and using the ServerSdk SDK in your project.
 
 ## Versions
 
-- SDK version: `1.0.1`
+- SDK version: `3.0.0`
 
 ## About the API
 
@@ -87,7 +87,7 @@ import { ServerSdk } from 'server-sdk';
     token: 'YOUR_TOKEN',
   });
 
-  const data = await serverSdk.states.countries();
+  const data = await serverSdk.serverSdk.countries();
 
   console.log(data);
 })();
@@ -100,59 +100,9 @@ The SDK provides various services to interact with the API.
 <details>
 <summary>Below is a list of all available services with links to their detailed documentation:</summary>
 
-| Name                                                                                                                 |
-| :------------------------------------------------------------------------------------------------------------------- |
-| [AuthService](documentation/services/AuthService.md)                                                                 |
-| [StatesService](documentation/services/StatesService.md)                                                             |
-| [SystemService](documentation/services/SystemService.md)                                                             |
-| [CategoryService](documentation/services/CategoryService.md)                                                         |
-| [CountService](documentation/services/CountService.md)                                                               |
-| [SearchService](documentation/services/SearchService.md)                                                             |
-| [SeoService](documentation/services/SeoService.md)                                                                   |
-| [ConfigService](documentation/services/ConfigService.md)                                                             |
-| [StatesInfoService](documentation/services/StatesInfoService.md)                                                     |
-| [SeoPagesService](documentation/services/SeoPagesService.md)                                                         |
-| [CategoryAndSlugService](documentation/services/CategoryAndSlugService.md)                                           |
-| [FavoritesService](documentation/services/FavoritesService.md)                                                       |
-| [ProfileService](documentation/services/ProfileService.md)                                                           |
-| [CartsService](documentation/services/CartsService.md)                                                               |
-| [CommentsService](documentation/services/CommentsService.md)                                                         |
-| [PaymentsService](documentation/services/PaymentsService.md)                                                         |
-| [WalletService](documentation/services/WalletService.md)                                                             |
-| [SessionsService](documentation/services/SessionsService.md)                                                         |
-| [NotificationsService](documentation/services/NotificationsService.md)                                               |
-| [UserDashBoardOrdersCommentsService](documentation/services/UserDashBoardOrdersCommentsService.md)                   |
-| [OrdersService](documentation/services/OrdersService.md)                                                             |
-| [SignaturesService](documentation/services/SignaturesService.md)                                                     |
-| [AchievementBadgeService](documentation/services/AchievementBadgeService.md)                                         |
-| [OffersService](documentation/services/OffersService.md)                                                             |
-| [CoinsService](documentation/services/CoinsService.md)                                                               |
-| [DashBoardService](documentation/services/DashBoardService.md)                                                       |
-| [UserService](documentation/services/UserService.md)                                                                 |
-| [LawyerProfileService](documentation/services/LawyerProfileService.md)                                               |
-| [BoostService](documentation/services/BoostService.md)                                                               |
-| [OfficeRoomsService](documentation/services/OfficeRoomsService.md)                                                   |
-| [LawyerDashboardOrdersService](documentation/services/LawyerDashboardOrdersService.md)                               |
-| [TimesService](documentation/services/TimesService.md)                                                               |
-| [ServicesService](documentation/services/ServicesService.md)                                                         |
-| [CardsService](documentation/services/CardsService.md)                                                               |
-| [WithdrawalRequestsService](documentation/services/WithdrawalRequestsService.md)                                     |
-| [LawyerDashboardWalletService](documentation/services/LawyerDashboardWalletService.md)                               |
-| [LawyerDashboardCategoryService](documentation/services/LawyerDashboardCategoryService.md)                           |
-| [LawyerDashboardSignaturesService](documentation/services/LawyerDashboardSignaturesService.md)                       |
-| [LawyerDashboardAchievementBadgeService](documentation/services/LawyerDashboardAchievementBadgeService.md)           |
-| [LeaderboardsService](documentation/services/LeaderboardsService.md)                                                 |
-| [LawyerDashboardSettingsNotificationsService](documentation/services/LawyerDashboardSettingsNotificationsService.md) |
-| [LawyerService](documentation/services/LawyerService.md)                                                             |
-| [CartService](documentation/services/CartService.md)                                                                 |
-| [ChatsService](documentation/services/ChatsService.md)                                                               |
-| [ToolsService](documentation/services/ToolsService.md)                                                               |
-| [CallsService](documentation/services/CallsService.md)                                                               |
-| [BlogsService](documentation/services/BlogsService.md)                                                               |
-| [MapsService](documentation/services/MapsService.md)                                                                 |
-| [TicketsService](documentation/services/TicketsService.md)                                                           |
-| [FaqService](documentation/services/FaqService.md)                                                                   |
-| [UpService](documentation/services/UpService.md)                                                                     |
+| Name                                                           |
+| :------------------------------------------------------------- |
+| [ServerSdkService](documentation/services/ServerSdkService.md) |
 
 </details>
 
@@ -163,83 +113,81 @@ The SDK includes several models that represent the data structures used in API r
 <details>
 <summary>Below is a list of all available models with links to their detailed documentation:</summary>
 
-| Name                                                                                                                           | Description |
-| :----------------------------------------------------------------------------------------------------------------------------- | :---------- |
-| [SendOtpRequest](documentation/models/SendOtpRequest.md)                                                                       |             |
-| [VerifyOtpRequest](documentation/models/VerifyOtpRequest.md)                                                                   |             |
-| [StatesRequest](documentation/models/StatesRequest.md)                                                                         |             |
-| [CitiesRequest](documentation/models/CitiesRequest.md)                                                                         |             |
-| [SearchHeaderRequest](documentation/models/SearchHeaderRequest.md)                                                             |             |
-| [OneRequest](documentation/models/OneRequest.md)                                                                               |             |
-| [FavoritesAddRequest](documentation/models/FavoritesAddRequest.md)                                                             |             |
-| [FavoritesRemoveRequest](documentation/models/FavoritesRemoveRequest.md)                                                       |             |
-| [ProfileUpdateAvatarRequest](documentation/models/ProfileUpdateAvatarRequest.md)                                               |             |
-| [ProfileUpdateProfileRequest](documentation/models/ProfileUpdateProfileRequest.md)                                             |             |
-| [CartsRemoveRequest](documentation/models/CartsRemoveRequest.md)                                                               |             |
-| [CommentsRemoveRequest](documentation/models/CommentsRemoveRequest.md)                                                         |             |
-| [WalletAddRequest](documentation/models/WalletAddRequest.md)                                                                   |             |
-| [SessionsRemoveRequest](documentation/models/SessionsRemoveRequest.md)                                                         |             |
-| [NotificationsUpdateRequest](documentation/models/NotificationsUpdateRequest.md)                                               |             |
-| [UserDashBoardOrdersCommentsCreateRequest](documentation/models/UserDashBoardOrdersCommentsCreateRequest.md)                   |             |
-| [OrdersListsRequest](documentation/models/OrdersListsRequest.md)                                                               |             |
-| [OrdersInfoRequest](documentation/models/OrdersInfoRequest.md)                                                                 |             |
-| [SignaturesListRequest](documentation/models/SignaturesListRequest.md)                                                         |             |
-| [SignaturesCreateRequest](documentation/models/SignaturesCreateRequest.md)                                                     |             |
-| [TradeMarketRequest](documentation/models/TradeMarketRequest.md)                                                               |             |
-| [WelcomeWizardRequest](documentation/models/WelcomeWizardRequest.md)                                                           |             |
-| [LawyerProfileUpdateProfileRequest](documentation/models/LawyerProfileUpdateProfileRequest.md)                                 |             |
-| [LawyerProfileUpdateAvatarRequest](documentation/models/LawyerProfileUpdateAvatarRequest.md)                                   |             |
-| [DeleteAvatarRequest](documentation/models/DeleteAvatarRequest.md)                                                             |             |
-| [BoostListRequest](documentation/models/BoostListRequest.md)                                                                   |             |
-| [BoostPayRequest](documentation/models/BoostPayRequest.md)                                                                     |             |
-| [OfficeRoomsListRequest](documentation/models/OfficeRoomsListRequest.md)                                                       |             |
-| [OfficeRoomsCreateRequest](documentation/models/OfficeRoomsCreateRequest.md)                                                   |             |
-| [EditRequest](documentation/models/EditRequest.md)                                                                             |             |
-| [OfficeRoomsDeleteRequest](documentation/models/OfficeRoomsDeleteRequest.md)                                                   |             |
-| [LawyerDashboardOrdersInfoRequest](documentation/models/LawyerDashboardOrdersInfoRequest.md)                                   |             |
-| [LawyerDashboardOrdersListsRequest](documentation/models/LawyerDashboardOrdersListsRequest.md)                                 |             |
-| [TimesListRequest](documentation/models/TimesListRequest.md)                                                                   |             |
-| [TimesCreateRequest](documentation/models/TimesCreateRequest.md)                                                               |             |
-| [TimesUpdateRequest](documentation/models/TimesUpdateRequest.md)                                                               |             |
-| [TimesDeleteRequest](documentation/models/TimesDeleteRequest.md)                                                               |             |
-| [CreateBulkRequest](documentation/models/CreateBulkRequest.md)                                                                 |             |
-| [TimeSchedules](documentation/models/TimeSchedules.md)                                                                         |             |
-| [ServicesListsRequest](documentation/models/ServicesListsRequest.md)                                                           |             |
-| [ServicesUpdateRequest](documentation/models/ServicesUpdateRequest.md)                                                         |             |
-| [CardsListRequest](documentation/models/CardsListRequest.md)                                                                   |             |
-| [CardsCreateRequest](documentation/models/CardsCreateRequest.md)                                                               |             |
-| [WithdrawalRequestsCreateRequest](documentation/models/WithdrawalRequestsCreateRequest.md)                                     |             |
-| [WithdrawalRequestsListRequest](documentation/models/WithdrawalRequestsListRequest.md)                                         |             |
-| [LawyerDashboardWalletInfoRequest](documentation/models/LawyerDashboardWalletInfoRequest.md)                                   |             |
-| [AddBalanceRequest](documentation/models/AddBalanceRequest.md)                                                                 |             |
-| [LawyerDashboardCategoryListsRequest](documentation/models/LawyerDashboardCategoryListsRequest.md)                             |             |
-| [LawyerDashboardCategoryCreateRequest](documentation/models/LawyerDashboardCategoryCreateRequest.md)                           |             |
-| [LawyerDashboardCategoryRemoveRequest](documentation/models/LawyerDashboardCategoryRemoveRequest.md)                           |             |
-| [LawyerDashboardSignaturesListRequest](documentation/models/LawyerDashboardSignaturesListRequest.md)                           |             |
-| [LawyerDashboardSignaturesCreateRequest](documentation/models/LawyerDashboardSignaturesCreateRequest.md)                       |             |
-| [LawyerDashboardAchievementBadgeListRequest](documentation/models/LawyerDashboardAchievementBadgeListRequest.md)               |             |
-| [LawyerDashboardSettingsNotificationsUpdateRequest](documentation/models/LawyerDashboardSettingsNotificationsUpdateRequest.md) |             |
-| [SearchRequest](documentation/models/SearchRequest.md)                                                                         |             |
-| [LawyerInfoRequest](documentation/models/LawyerInfoRequest.md)                                                                 |             |
-| [ServicesRequest](documentation/models/ServicesRequest.md)                                                                     |             |
-| [LawyerCreateRequest](documentation/models/LawyerCreateRequest.md)                                                             |             |
-| [LawyerBoostListRequest](documentation/models/LawyerBoostListRequest.md)                                                       |             |
-| [TimesRequest](documentation/models/TimesRequest.md)                                                                           |             |
-| [CartCreateRequest](documentation/models/CartCreateRequest.md)                                                                 |             |
-| [CartInfoRequest](documentation/models/CartInfoRequest.md)                                                                     |             |
-| [AddCouponRequest](documentation/models/AddCouponRequest.md)                                                                   |             |
-| [RemoveCouponRequest](documentation/models/RemoveCouponRequest.md)                                                             |             |
-| [CartPayRequest](documentation/models/CartPayRequest.md)                                                                       |             |
-| [MessageListRequest](documentation/models/MessageListRequest.md)                                                               |             |
-| [ChatsSendMessageRequest](documentation/models/ChatsSendMessageRequest.md)                                                     |             |
-| [OfferRequest](documentation/models/OfferRequest.md)                                                                           |             |
-| [AnswerRequest](documentation/models/AnswerRequest.md)                                                                         |             |
-| [MemberOfRoomRequest](documentation/models/MemberOfRoomRequest.md)                                                             |             |
-| [JoinRequest](documentation/models/JoinRequest.md)                                                                             |             |
-| [MapsInfoRequest](documentation/models/MapsInfoRequest.md)                                                                     |             |
-| [TicketsCreateRequest](documentation/models/TicketsCreateRequest.md)                                                           |             |
-| [TicketsSendMessageRequest](documentation/models/TicketsSendMessageRequest.md)                                                 |             |
-| [FaqListRequest](documentation/models/FaqListRequest.md)                                                                       |             |
-| [CheckUpRequest](documentation/models/CheckUpRequest.md)                                                                       |             |
+| Name                                                                                     | Description |
+| :--------------------------------------------------------------------------------------- | :---------- |
+| [SendOtpRequest](documentation/models/SendOtpRequest.md)                                 |             |
+| [VerifyOtpRequest](documentation/models/VerifyOtpRequest.md)                             |             |
+| [StatesRequest](documentation/models/StatesRequest.md)                                   |             |
+| [CitiesRequest](documentation/models/CitiesRequest.md)                                   |             |
+| [SearchHeaderRequest](documentation/models/SearchHeaderRequest.md)                       |             |
+| [OneRequest](documentation/models/OneRequest.md)                                         |             |
+| [ServerSdkAddRequest1](documentation/models/ServerSdkAddRequest1.md)                     |             |
+| [ServerSdkRemoveRequest1](documentation/models/ServerSdkRemoveRequest1.md)               |             |
+| [ServerSdkUpdateAvatarRequest1](documentation/models/ServerSdkUpdateAvatarRequest1.md)   |             |
+| [ServerSdkUpdateProfileRequest1](documentation/models/ServerSdkUpdateProfileRequest1.md) |             |
+| [ServerSdkRemoveRequest2](documentation/models/ServerSdkRemoveRequest2.md)               |             |
+| [ServerSdkRemoveRequest3](documentation/models/ServerSdkRemoveRequest3.md)               |             |
+| [ServerSdkAddRequest2](documentation/models/ServerSdkAddRequest2.md)                     |             |
+| [ServerSdkRemoveRequest4](documentation/models/ServerSdkRemoveRequest4.md)               |             |
+| [ServerSdkUpdateRequest1](documentation/models/ServerSdkUpdateRequest1.md)               |             |
+| [ServerSdkCreateRequest1](documentation/models/ServerSdkCreateRequest1.md)               |             |
+| [ServerSdkListsRequest1](documentation/models/ServerSdkListsRequest1.md)                 |             |
+| [ServerSdkInfoRequest1](documentation/models/ServerSdkInfoRequest1.md)                   |             |
+| [ServerSdkListRequest1](documentation/models/ServerSdkListRequest1.md)                   |             |
+| [ServerSdkCreateRequest2](documentation/models/ServerSdkCreateRequest2.md)               |             |
+| [TradeMarketRequest](documentation/models/TradeMarketRequest.md)                         |             |
+| [WelcomeWizardRequest](documentation/models/WelcomeWizardRequest.md)                     |             |
+| [ServerSdkUpdateProfileRequest2](documentation/models/ServerSdkUpdateProfileRequest2.md) |             |
+| [ServerSdkUpdateAvatarRequest2](documentation/models/ServerSdkUpdateAvatarRequest2.md)   |             |
+| [DeleteAvatarRequest](documentation/models/DeleteAvatarRequest.md)                       |             |
+| [ServerSdkListRequest2](documentation/models/ServerSdkListRequest2.md)                   |             |
+| [ServerSdkPayRequest1](documentation/models/ServerSdkPayRequest1.md)                     |             |
+| [ServerSdkListRequest3](documentation/models/ServerSdkListRequest3.md)                   |             |
+| [ServerSdkCreateRequest3](documentation/models/ServerSdkCreateRequest3.md)               |             |
+| [EditRequest](documentation/models/EditRequest.md)                                       |             |
+| [ServerSdkDeleteRequest1](documentation/models/ServerSdkDeleteRequest1.md)               |             |
+| [ServerSdkInfoRequest2](documentation/models/ServerSdkInfoRequest2.md)                   |             |
+| [ServerSdkListsRequest2](documentation/models/ServerSdkListsRequest2.md)                 |             |
+| [ServerSdkListRequest4](documentation/models/ServerSdkListRequest4.md)                   |             |
+| [ServerSdkCreateRequest4](documentation/models/ServerSdkCreateRequest4.md)               |             |
+| [ServerSdkUpdateRequest2](documentation/models/ServerSdkUpdateRequest2.md)               |             |
+| [ServerSdkDeleteRequest2](documentation/models/ServerSdkDeleteRequest2.md)               |             |
+| [CreateBulkRequest](documentation/models/CreateBulkRequest.md)                           |             |
+| [TimeSchedules](documentation/models/TimeSchedules.md)                                   |             |
+| [ServerSdkListsRequest3](documentation/models/ServerSdkListsRequest3.md)                 |             |
+| [ServerSdkUpdateRequest3](documentation/models/ServerSdkUpdateRequest3.md)               |             |
+| [ServerSdkListRequest5](documentation/models/ServerSdkListRequest5.md)                   |             |
+| [ServerSdkCreateRequest5](documentation/models/ServerSdkCreateRequest5.md)               |             |
+| [ServerSdkCreateRequest6](documentation/models/ServerSdkCreateRequest6.md)               |             |
+| [ServerSdkListRequest6](documentation/models/ServerSdkListRequest6.md)                   |             |
+| [ServerSdkInfoRequest3](documentation/models/ServerSdkInfoRequest3.md)                   |             |
+| [AddBalanceRequest](documentation/models/AddBalanceRequest.md)                           |             |
+| [ServerSdkListsRequest4](documentation/models/ServerSdkListsRequest4.md)                 |             |
+| [ServerSdkCreateRequest7](documentation/models/ServerSdkCreateRequest7.md)               |             |
+| [ServerSdkRemoveRequest5](documentation/models/ServerSdkRemoveRequest5.md)               |             |
+| [ServerSdkListRequest7](documentation/models/ServerSdkListRequest7.md)                   |             |
+| [ServerSdkCreateRequest8](documentation/models/ServerSdkCreateRequest8.md)               |             |
+| [ServerSdkListRequest8](documentation/models/ServerSdkListRequest8.md)                   |             |
+| [ServerSdkUpdateRequest4](documentation/models/ServerSdkUpdateRequest4.md)               |             |
+| [SearchRequest](documentation/models/SearchRequest.md)                                   |             |
+| [ServerSdkInfoRequest4](documentation/models/ServerSdkInfoRequest4.md)                   |             |
+| [ServicesRequest](documentation/models/ServicesRequest.md)                               |             |
+| [ServerSdkCreateRequest9](documentation/models/ServerSdkCreateRequest9.md)               |             |
+| [BoostListRequest](documentation/models/BoostListRequest.md)                             |             |
+| [TimesRequest](documentation/models/TimesRequest.md)                                     |             |
+| [ServerSdkCreateRequest10](documentation/models/ServerSdkCreateRequest10.md)             |             |
+| [ServerSdkInfoRequest5](documentation/models/ServerSdkInfoRequest5.md)                   |             |
+| [AddCouponRequest](documentation/models/AddCouponRequest.md)                             |             |
+| [RemoveCouponRequest](documentation/models/RemoveCouponRequest.md)                       |             |
+| [ServerSdkPayRequest2](documentation/models/ServerSdkPayRequest2.md)                     |             |
+| [MessageListRequest](documentation/models/MessageListRequest.md)                         |             |
+| [ServerSdkSendMessageRequest1](documentation/models/ServerSdkSendMessageRequest1.md)     |             |
+| [OfferRequest](documentation/models/OfferRequest.md)                                     |             |
+| [AnswerRequest](documentation/models/AnswerRequest.md)                                   |             |
+| [JoinRequest](documentation/models/JoinRequest.md)                                       |             |
+| [ServerSdkInfoRequest6](documentation/models/ServerSdkInfoRequest6.md)                   |             |
+| [ServerSdkCreateRequest11](documentation/models/ServerSdkCreateRequest11.md)             |             |
+| [ServerSdkSendMessageRequest2](documentation/models/ServerSdkSendMessageRequest2.md)     |             |
+| [FaqListRequest](documentation/models/FaqListRequest.md)                                 |             |
 
 </details>

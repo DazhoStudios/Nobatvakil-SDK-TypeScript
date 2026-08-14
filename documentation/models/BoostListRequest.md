@@ -2,6 +2,6 @@
 
 **Properties**
 
-| Name     | Type   | Required | Description |
-| :------- | :----- | :------- | :---------- |
-| lawyerId | string | ❌       |             |
+| Name | Type   | Required | Description |
+| :--- | :----- | :------- | :---------- |
+| id   | string | ❌       |             |

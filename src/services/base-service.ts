@@ -13,8 +13,8 @@ export class BaseService {
   /** Service-level configuration overrides */
   protected serviceConfig?: Partial<SdkConfig>;
 
-  constructor(public config1: SdkConfig) {
-    this.client = new HttpClient(this.config1);
+  constructor(public config: SdkConfig) {
+    this.client = new HttpClient(this.config);
   }
 
   /**
@@ -71,7 +71,7 @@ export class BaseService {
     methodConfig?: Partial<SdkConfig>,
     requestConfig?: Partial<SdkConfig>,
   ): SdkConfig {
-    let merged: SdkConfig = { ...this.config1 } as SdkConfig;
+    let merged: SdkConfig = { ...this.config } as SdkConfig;
     if (this.serviceConfig) {
       merged = BaseService.deepMerge(merged, this.serviceConfig);
     }
@@ -85,18 +85,18 @@ export class BaseService {
   }
 
   set baseUrl(baseUrl: string) {
-    this.config1.baseUrl = baseUrl;
+    this.config.baseUrl = baseUrl;
   }
 
   set environment(environment: Environment) {
-    this.config1.environment = environment;
+    this.config.environment = environment;
   }
 
   set timeoutMs(timeoutMs: number) {
-    this.config1.timeoutMs = timeoutMs;
+    this.config.timeoutMs = timeoutMs;
   }
 
   set token(token: string) {
-    this.config1.token = token;
+    this.config.token = token;
   }
 }

@@ -1,334 +1,334 @@
 {
   "endpoints": {
     "/api/auth/sendOTP": {
-      "post": "import { SendOtpRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const sendOtpRequest: SendOtpRequest = {\t\n    phoneNumber: \"09106059954\"\n  };\n\n  const data = await serverSdk.auth.sendOtp(sendOtpRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { SendOtpRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const sendOtpRequest: SendOtpRequest = {\t\n    phoneNumber: \"09106059954\"\n  };\n\n  const data = await serverSdk.serverSdk.sendOtp(sendOtpRequest);\n\n  console.log(data);\n})();\n"
     },
     "/api/auth/verifyOTP": {
-      "post": "import { ServerSdk, VerifyOtpRequest } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const verifyOtpRequest: VerifyOtpRequest = {\t\n    phoneNumber: \"09022525374\",\n    code: \"161138\"\n  };\n\n  const data = await serverSdk.auth.verifyOtp(verifyOtpRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, VerifyOtpRequest } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const verifyOtpRequest: VerifyOtpRequest = {\t\n    phoneNumber: \"09022525374\",\n    code: \"161138\"\n  };\n\n  const data = await serverSdk.serverSdk.verifyOtp(verifyOtpRequest);\n\n  console.log(data);\n})();\n"
     },
     "/api/tools/countries": {
-      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.states.countries();\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.serverSdk.countries();\n\n  console.log(data);\n})();\n"
     },
     "/api/tools/states": {
-      "post": "import { ServerSdk, StatesRequest } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const statesRequest: StatesRequest = {\t\n    countryId: \"28\"\n  };\n\n  const data = await serverSdk.states.states(statesRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, StatesRequest } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const statesRequest: StatesRequest = {\t\n    countryId: \"28\"\n  };\n\n  const data = await serverSdk.serverSdk.states(statesRequest);\n\n  console.log(data);\n})();\n"
     },
     "/api/tools/cities": {
-      "post": "import { CitiesRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const citiesRequest: CitiesRequest = {\t\n    stateId: \"5\"\n  };\n\n  const data = await serverSdk.states.cities(citiesRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { CitiesRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const citiesRequest: CitiesRequest = {\t\n    stateId: \"5\"\n  };\n\n  const data = await serverSdk.serverSdk.cities(citiesRequest);\n\n  console.log(data);\n})();\n"
     },
     "/up": {
-      "get": "import { CheckUpRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const checkUpRequest: CheckUpRequest = {\t\n    phoneNumber: \"09106059954\"\n  };\n\n  const data = await serverSdk.up.checkUp(checkUpRequest);\n\n  console.log(data);\n})();\n"
+      "get": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.serverSdk.checkUp();\n\n  console.log(data);\n})();\n"
     },
     "/api/tools/categories": {
-      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.category.getCategories();\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.serverSdk.getCategories();\n\n  console.log(data);\n})();\n"
     },
     "/api/tools/count": {
-      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.count.countList();\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.serverSdk.countList();\n\n  console.log(data);\n})();\n"
     },
     "/api/tools/get-search": {
-      "post": "import { SearchHeaderRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const searchHeaderRequest: SearchHeaderRequest = {\t\n    name: \"وکیل\"\n  };\n\n  const data = await serverSdk.search.searchHeader(searchHeaderRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { SearchHeaderRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const searchHeaderRequest: SearchHeaderRequest = {\t\n    name: \"وکیل\"\n  };\n\n  const data = await serverSdk.serverSdk.searchHeader(searchHeaderRequest);\n\n  console.log(data);\n})();\n"
     },
     "/api/tools/get-seo-tags": {
-      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.seo.listSeo();\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.serverSdk.listSeo();\n\n  console.log(data);\n})();\n"
     },
     "/api/tools/get-config-list": {
-      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.config.list();\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.serverSdk.list();\n\n  console.log(data);\n})();\n"
     },
     "/api/tools/get-config": {
-      "post": "import { OneRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const oneRequest: OneRequest = {\t\n    name: \"enamad_code\"\n  };\n\n  const data = await serverSdk.config.one(oneRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { OneRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const oneRequest: OneRequest = {\t\n    name: \"enamad_code\"\n  };\n\n  const data = await serverSdk.serverSdk.one(oneRequest);\n\n  console.log(data);\n})();\n"
     },
     "/api/tools/get-state/alborz": {
-      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.statesInfo.getStatesBySlug();\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.serverSdk.getStatesBySlug();\n\n  console.log(data);\n})();\n"
     },
     "/api/tools/get-City/1": {
-      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.statesInfo.getCitiesBySlug();\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.serverSdk.getCitiesBySlug();\n\n  console.log(data);\n})();\n"
     },
     "/api/tools/get-seo-page/family-in-karaj": {
-      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.seoPages.getSeoPages();\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.serverSdk.getSeoPages();\n\n  console.log(data);\n})();\n"
     },
     "/api/tools/lawyers/vakil-khanevade/karaj": {
-      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.categoryAndSlug.categoryBySlug();\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.serverSdk.categoryBySlug();\n\n  console.log(data);\n})();\n"
     },
     "/api/user/dashboard/favorites/list": {
-      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.favorites.list();\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.serverSdk.list1();\n\n  console.log(data);\n})();\n"
     },
     "/api/user/dashboard/favorites/add": {
-      "post": "import { FavoritesAddRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const favoritesAddRequest: FavoritesAddRequest = {\t\n    id: \"10\"\n  };\n\n  const data = await serverSdk.favorites.add(favoritesAddRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkAddRequest1 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkAddRequest1: ServerSdkAddRequest1 = {\t\n    id: \"10\"\n  };\n\n  const data = await serverSdk.serverSdk.add(serverSdkAddRequest1);\n\n  console.log(data);\n})();\n"
     },
     "/api/user/dashboard/favorites/remove": {
-      "post": "import { FavoritesRemoveRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const favoritesRemoveRequest: FavoritesRemoveRequest = {\t\n    id: \"10\"\n  };\n\n  const data = await serverSdk.favorites.remove(favoritesRemoveRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkRemoveRequest1 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkRemoveRequest1: ServerSdkRemoveRequest1 = {\t\n    id: \"10\"\n  };\n\n  const data = await serverSdk.serverSdk.remove(serverSdkRemoveRequest1);\n\n  console.log(data);\n})();\n"
     },
     "/api/user/dashboard/update/avatar": {
-      "post": "import { ProfileUpdateAvatarRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const profileUpdateAvatarRequest: ProfileUpdateAvatarRequest = {\t\n    id: \"1\",\n    image: new ArrayBuffer(0)\n  };\n\n  const data = await serverSdk.profile.updateAvatar(profileUpdateAvatarRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkUpdateAvatarRequest1 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkUpdateAvatarRequest1: ServerSdkUpdateAvatarRequest1 = {\t\n    id: \"1\",\n    image: new ArrayBuffer(0)\n  };\n\n  const data = await serverSdk.serverSdk.updateAvatar(serverSdkUpdateAvatarRequest1);\n\n  console.log(data);\n})();\n"
     },
     "/api/user/dashboard/update/profile": {
-      "post": "import { ProfileUpdateProfileRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const profileUpdateProfileRequest: ProfileUpdateProfileRequest = {\t\n    firstName: \"Yousef\",\n    lastName: \"Moghadam\",\n    email: \"yousef.wersy@gmail.com\",\n    naturalCode: \"1234567899\",\n    gender: \"male\"\n  };\n\n  const data = await serverSdk.profile.updateProfile(profileUpdateProfileRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkUpdateProfileRequest1 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkUpdateProfileRequest1: ServerSdkUpdateProfileRequest1 = {\t\n    firstName: \"Yousef\",\n    lastName: \"Moghadam\",\n    email: \"yousef.wersy@gmail.com\",\n    naturalCode: \"1234567899\",\n    gender: \"male\"\n  };\n\n  const data = await serverSdk.serverSdk.updateProfile(serverSdkUpdateProfileRequest1);\n\n  console.log(data);\n})();\n"
     },
     "/api/user/dashboard/update/delete-avatar": {
-      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.profile.deleteAvatar();\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.serverSdk.deleteAvatar();\n\n  console.log(data);\n})();\n"
     },
     "/api/user/dashboard/carts/list": {
-      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.carts.list();\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.serverSdk.list2();\n\n  console.log(data);\n})();\n"
     },
     "/api/user/dashboard/carts/remove": {
-      "post": "import { CartsRemoveRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const cartsRemoveRequest: CartsRemoveRequest = {\t\n    id: \"1\"\n  };\n\n  const data = await serverSdk.carts.remove(cartsRemoveRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkRemoveRequest2 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkRemoveRequest2: ServerSdkRemoveRequest2 = {\t\n    id: \"1\"\n  };\n\n  const data = await serverSdk.serverSdk.remove1(serverSdkRemoveRequest2);\n\n  console.log(data);\n})();\n"
     },
     "/api/user/dashboard/comments/list": {
-      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.comments.list();\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.serverSdk.list3();\n\n  console.log(data);\n})();\n"
     },
     "/api/user/dashboard/comments/remove": {
-      "post": "import { CommentsRemoveRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const commentsRemoveRequest: CommentsRemoveRequest = {\t\n    id: \"1\"\n  };\n\n  const data = await serverSdk.comments.remove(commentsRemoveRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkRemoveRequest3 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkRemoveRequest3: ServerSdkRemoveRequest3 = {\t\n    id: \"1\"\n  };\n\n  const data = await serverSdk.serverSdk.remove2(serverSdkRemoveRequest3);\n\n  console.log(data);\n})();\n"
     },
     "/api/user/dashboard/payments/list": {
-      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.payments.list();\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.serverSdk.list4();\n\n  console.log(data);\n})();\n"
     },
     "/api/user/dashboard/wallet/list": {
-      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.wallet.list();\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.serverSdk.list5();\n\n  console.log(data);\n})();\n"
     },
     "/api/user/dashboard/wallet/add": {
-      "post": "import { ServerSdk, WalletAddRequest } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const walletAddRequest: WalletAddRequest = {\t\n    amount: \"10000\"\n  };\n\n  const data = await serverSdk.wallet.add(walletAddRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkAddRequest2 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkAddRequest2: ServerSdkAddRequest2 = {\t\n    amount: \"10000\"\n  };\n\n  const data = await serverSdk.serverSdk.add1(serverSdkAddRequest2);\n\n  console.log(data);\n})();\n"
     },
     "/api/user/dashboard/settings/session/list": {
-      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.sessions.list();\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.serverSdk.list6();\n\n  console.log(data);\n})();\n"
     },
     "/api/user/dashboard/settings/session/remove": {
-      "post": "import { ServerSdk, SessionsRemoveRequest } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const sessionsRemoveRequest: SessionsRemoveRequest = {\t\n    id: \"1\"\n  };\n\n  const data = await serverSdk.sessions.remove(sessionsRemoveRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkRemoveRequest4 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkRemoveRequest4: ServerSdkRemoveRequest4 = {\t\n    id: \"1\"\n  };\n\n  const data = await serverSdk.serverSdk.remove3(serverSdkRemoveRequest4);\n\n  console.log(data);\n})();\n"
     },
     "/api/user/dashboard/settings/session/remove-all": {
-      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.sessions.removeAll();\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.serverSdk.removeAll();\n\n  console.log(data);\n})();\n"
     },
     "/api/user/dashboard/settings/notifications/list": {
-      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.notifications.list();\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.serverSdk.list7();\n\n  console.log(data);\n})();\n"
     },
     "/api/user/dashboard/settings/notifications/update": {
-      "post": "import { NotificationsUpdateRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const notificationsUpdateRequest: NotificationsUpdateRequest = {\t\n    pusherEnabled: \"true\",\n    smsEnabled: \"true\",\n    emailEnabled: \"true\"\n  };\n\n  const data = await serverSdk.notifications.update(notificationsUpdateRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkUpdateRequest1 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkUpdateRequest1: ServerSdkUpdateRequest1 = {\t\n    pusherEnabled: \"true\",\n    smsEnabled: \"true\",\n    emailEnabled: \"true\"\n  };\n\n  const data = await serverSdk.serverSdk.update(serverSdkUpdateRequest1);\n\n  console.log(data);\n})();\n"
     },
     "/api/user/dashboard/orders/comments/craete": {
-      "post": "import { ServerSdk, UserDashBoardOrdersCommentsCreateRequest } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const userDashBoardOrdersCommentsCreateRequest: UserDashBoardOrdersCommentsCreateRequest = {\t\n    lawyerId: \"1\",\n    orderId: \"1\",\n    comment: \"عالی بود\",\n    serviceTypeId: \"1\",\n    rate: \"4\",\n    suggested: \"yes\"\n  };\n\n  const data = await serverSdk.userDashBoardOrdersComments.create(userDashBoardOrdersCommentsCreateRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkCreateRequest1 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkCreateRequest1: ServerSdkCreateRequest1 = {\t\n    lawyerId: \"1\",\n    orderId: \"1\",\n    comment: \"عالی بود\",\n    serviceTypeId: \"1\",\n    rate: \"4\",\n    suggested: \"yes\"\n  };\n\n  const data = await serverSdk.serverSdk.create(serverSdkCreateRequest1);\n\n  console.log(data);\n})();\n"
     },
     "/api/user/dashboard/orders/list": {
-      "post": "import { OrdersListsRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const ordersListsRequest: OrdersListsRequest = {\t\n    page: \"1\"\n  };\n\n  const data = await serverSdk.orders.lists(ordersListsRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkListsRequest1 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkListsRequest1: ServerSdkListsRequest1 = {\t\n    page: \"1\"\n  };\n\n  const data = await serverSdk.serverSdk.lists(serverSdkListsRequest1);\n\n  console.log(data);\n})();\n"
     },
     "/api/user/dashboard/orders/show": {
-      "post": "import { OrdersInfoRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const ordersInfoRequest: OrdersInfoRequest = {\t\n    id: \"1\"\n  };\n\n  const data = await serverSdk.orders.info(ordersInfoRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkInfoRequest1 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkInfoRequest1: ServerSdkInfoRequest1 = {\t\n    id: \"1\"\n  };\n\n  const data = await serverSdk.serverSdk.info(serverSdkInfoRequest1);\n\n  console.log(data);\n})();\n"
     },
     "/api/user/dashboard/signatrue/list": {
-      "post": "import { ServerSdk, SignaturesListRequest } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const signaturesListRequest: SignaturesListRequest = {\t\n    id: \"2\"\n  };\n\n  const data = await serverSdk.signatures.list(signaturesListRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkListRequest1 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkListRequest1: ServerSdkListRequest1 = {\t\n    id: \"2\"\n  };\n\n  const data = await serverSdk.serverSdk.list8(serverSdkListRequest1);\n\n  console.log(data);\n})();\n"
     },
     "/api/user/dashboard/signatrue/create": {
-      "post": "import { ServerSdk, SignaturesCreateRequest } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const signaturesCreateRequest: SignaturesCreateRequest = {\t\n    title: \"امضای آقای مقدم\",\n    image: new ArrayBuffer(0)\n  };\n\n  const data = await serverSdk.signatures.create(signaturesCreateRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkCreateRequest2 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkCreateRequest2: ServerSdkCreateRequest2 = {\t\n    title: \"امضای آقای مقدم\",\n    image: new ArrayBuffer(0)\n  };\n\n  const data = await serverSdk.serverSdk.create1(serverSdkCreateRequest2);\n\n  console.log(data);\n})();\n"
     },
     "/api/user/dashboard/achievement/lists": {
-      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.achievementBadge.list();\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.serverSdk.list9();\n\n  console.log(data);\n})();\n"
     },
     "/api/user/dashboard/offers/list": {
-      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.offers.listMyOffer();\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.serverSdk.listMyOffer();\n\n  console.log(data);\n})();\n"
     },
     "/api/user/dashboard/coins/list": {
-      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.coins.listHistory();\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.serverSdk.listHistory();\n\n  console.log(data);\n})();\n"
     },
     "/api/user/dashboard/coins/trade": {
-      "post": "import { ServerSdk, TradeMarketRequest } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const tradeMarketRequest: TradeMarketRequest = {\t\n    coin: \"1\"\n  };\n\n  const data = await serverSdk.coins.tradeMarket(tradeMarketRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, TradeMarketRequest } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const tradeMarketRequest: TradeMarketRequest = {\t\n    coin: \"1\"\n  };\n\n  const data = await serverSdk.serverSdk.tradeMarket(tradeMarketRequest);\n\n  console.log(data);\n})();\n"
     },
     "/api/user/get-permissions": {
-      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.dashBoard.getPermisionList();\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.serverSdk.getPermisionList();\n\n  console.log(data);\n})();\n"
     },
     "/api/user/info": {
-      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.user.info();\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.serverSdk.info1();\n\n  console.log(data);\n})();\n"
     },
     "/api/user/wizard": {
-      "post": "import { ServerSdk, WelcomeWizardRequest } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const welcomeWizardRequest: WelcomeWizardRequest = {\t\n    firstName: \"Yousef\",\n    lastName: \"Moghadam\",\n    email: \"yousef.wersy999@gmail.com\",\n    naturalCode: \"12345678888\",\n    gender: \"male\"\n  };\n\n  const data = await serverSdk.user.welcomeWizard(welcomeWizardRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, WelcomeWizardRequest } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const welcomeWizardRequest: WelcomeWizardRequest = {\t\n    firstName: \"Yousef\",\n    lastName: \"Moghadam\",\n    email: \"yousef.wersy999@gmail.com\",\n    naturalCode: \"12345678888\",\n    gender: \"male\"\n  };\n\n  const data = await serverSdk.serverSdk.welcomeWizard(welcomeWizardRequest);\n\n  console.log(data);\n})();\n"
     },
     "/api/lawyer/update-profile": {
-      "post": "import { LawyerProfileUpdateProfileRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const lawyerProfileUpdateProfileRequest: LawyerProfileUpdateProfileRequest = {\t\n    id: \"3\",\n    firstName: \"Yousef\",\n    lastName: \"Moghadam\",\n    biography: \"test\",\n    phoneNumber: \"09106059954\",\n    startWorkingDate: \"2025/10/06\",\n    email: \"vandadmarket@gmail.com\"\n  };\n\n  const data = await serverSdk.lawyerProfile.updateProfile(lawyerProfileUpdateProfileRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkUpdateProfileRequest2 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkUpdateProfileRequest2: ServerSdkUpdateProfileRequest2 = {\t\n    id: \"3\",\n    firstName: \"Yousef\",\n    lastName: \"Moghadam\",\n    biography: \"test\",\n    phoneNumber: \"09106059954\",\n    startWorkingDate: \"2025/10/06\",\n    email: \"vandadmarket@gmail.com\"\n  };\n\n  const data = await serverSdk.serverSdk.updateProfile1(serverSdkUpdateProfileRequest2);\n\n  console.log(data);\n})();\n"
     },
     "/api/lawyer/update-avatar": {
-      "post": "import { LawyerProfileUpdateAvatarRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const lawyerProfileUpdateAvatarRequest: LawyerProfileUpdateAvatarRequest = {\t\n    id: \"2\",\n    image: new ArrayBuffer(0)\n  };\n\n  const data = await serverSdk.lawyerProfile.updateAvatar(lawyerProfileUpdateAvatarRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkUpdateAvatarRequest2 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkUpdateAvatarRequest2: ServerSdkUpdateAvatarRequest2 = {\t\n    id: \"2\",\n    image: new ArrayBuffer(0)\n  };\n\n  const data = await serverSdk.serverSdk.updateAvatar1(serverSdkUpdateAvatarRequest2);\n\n  console.log(data);\n})();\n"
     },
     "/api/lawyer/delete-avatar": {
-      "post": "import { DeleteAvatarRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const deleteAvatarRequest: DeleteAvatarRequest = {\t\n    id: \"1\"\n  };\n\n  const data = await serverSdk.lawyerProfile.deleteAvatar(deleteAvatarRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { DeleteAvatarRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const deleteAvatarRequest: DeleteAvatarRequest = {\t\n    id: \"1\"\n  };\n\n  const data = await serverSdk.serverSdk.deleteAvatar1(deleteAvatarRequest);\n\n  console.log(data);\n})();\n"
     },
     "/api/lawyer/dashboard/boost/list": {
-      "post": "import { BoostListRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const boostListRequest: BoostListRequest = {\t\n    lawyerId: \"1\"\n  };\n\n  const data = await serverSdk.boost.list(boostListRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkListRequest2 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkListRequest2: ServerSdkListRequest2 = {\t\n    lawyerId: \"1\"\n  };\n\n  const data = await serverSdk.serverSdk.list10(serverSdkListRequest2);\n\n  console.log(data);\n})();\n"
     },
     "/api/lawyer/dashboard/boost/pay": {
-      "post": "import { BoostPayRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const boostPayRequest: BoostPayRequest = {\t\n    lawyerId: \"1\",\n    subId: \"1\",\n    paymentMethod: \"wallet\"\n  };\n\n  const data = await serverSdk.boost.pay(boostPayRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkPayRequest1 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkPayRequest1: ServerSdkPayRequest1 = {\t\n    lawyerId: \"1\",\n    subId: \"1\",\n    paymentMethod: \"wallet\"\n  };\n\n  const data = await serverSdk.serverSdk.pay(serverSdkPayRequest1);\n\n  console.log(data);\n})();\n"
     },
     "/api/lawyer/dashboard/rooms/list": {
-      "post": "import { OfficeRoomsListRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const officeRoomsListRequest: OfficeRoomsListRequest = {\t\n    lawyerId: \"1\"\n  };\n\n  const data = await serverSdk.officeRooms.list(officeRoomsListRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkListRequest3 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkListRequest3: ServerSdkListRequest3 = {\t\n    lawyerId: \"1\"\n  };\n\n  const data = await serverSdk.serverSdk.list11(serverSdkListRequest3);\n\n  console.log(data);\n})();\n"
     },
     "/api/lawyer/dashboard/rooms/create": {
-      "post": "import { OfficeRoomsCreateRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const officeRoomsCreateRequest: OfficeRoomsCreateRequest = {\t\n    lawyerId: \"1\",\n    name: \"دفتر مرکزی\",\n    telNumbers: \"02612345678\",\n    address: \"کرج، میدان خوارزمی، دانشگاه خوارزمی\",\n    locationLink: \"https://neshan.org/map/4412s1d4f2d\"\n  };\n\n  const data = await serverSdk.officeRooms.create(officeRoomsCreateRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkCreateRequest3 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkCreateRequest3: ServerSdkCreateRequest3 = {\t\n    lawyerId: \"1\",\n    name: \"دفتر مرکزی\",\n    telNumbers: \"02612345678\",\n    address: \"کرج، میدان خوارزمی، دانشگاه خوارزمی\",\n    locationLink: \"https://neshan.org/map/4412s1d4f2d\"\n  };\n\n  const data = await serverSdk.serverSdk.create2(serverSdkCreateRequest3);\n\n  console.log(data);\n})();\n"
     },
     "/api/lawyer/dashboard/rooms/edit": {
-      "post": "import { EditRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const editRequest: EditRequest = {\t\n    lawyerId: \"3\",\n    addressId: \"1\",\n    name: \"اسم دفتر\",\n    telNumbers: \"02612345678\",\n    address: \"کرج، خیابان شهید بهشتی\",\n    locationLink: \"https://neshan.org/map/dhvcdhsvc\"\n  };\n\n  const data = await serverSdk.officeRooms.edit(editRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { EditRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const editRequest: EditRequest = {\t\n    lawyerId: \"3\",\n    addressId: \"1\",\n    name: \"اسم دفتر\",\n    telNumbers: \"02612345678\",\n    address: \"کرج، خیابان شهید بهشتی\",\n    locationLink: \"https://neshan.org/map/dhvcdhsvc\"\n  };\n\n  const data = await serverSdk.serverSdk.edit(editRequest);\n\n  console.log(data);\n})();\n"
     },
     "/api/lawyer/dashboard/rooms/delete": {
-      "post": "import { OfficeRoomsDeleteRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const officeRoomsDeleteRequest: OfficeRoomsDeleteRequest = {\t\n    lawyerId: \"3\",\n    addressId: \"1\"\n  };\n\n  const data = await serverSdk.officeRooms.delete_(officeRoomsDeleteRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkDeleteRequest1 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkDeleteRequest1: ServerSdkDeleteRequest1 = {\t\n    lawyerId: \"3\",\n    addressId: \"1\"\n  };\n\n  const data = await serverSdk.serverSdk.delete_(serverSdkDeleteRequest1);\n\n  console.log(data);\n})();\n"
     },
     "/api/lawyer/dashboard/orders/show": {
-      "post": "import { LawyerDashboardOrdersInfoRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const lawyerDashboardOrdersInfoRequest: LawyerDashboardOrdersInfoRequest = {\t\n    id: \"1\",\n    lawyerId: \"1\"\n  };\n\n  const data = await serverSdk.lawyerDashboardOrders.info(lawyerDashboardOrdersInfoRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkInfoRequest2 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkInfoRequest2: ServerSdkInfoRequest2 = {\t\n    id: \"1\",\n    lawyerId: \"1\"\n  };\n\n  const data = await serverSdk.serverSdk.info2(serverSdkInfoRequest2);\n\n  console.log(data);\n})();\n"
     },
     "/api/lawyer/dashboard/orders/list": {
-      "post": "import { LawyerDashboardOrdersListsRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const lawyerDashboardOrdersListsRequest: LawyerDashboardOrdersListsRequest = {\t\n    id: \"19\"\n  };\n\n  const data = await serverSdk.lawyerDashboardOrders.lists(lawyerDashboardOrdersListsRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkListsRequest2 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkListsRequest2: ServerSdkListsRequest2 = {\t\n    id: \"19\"\n  };\n\n  const data = await serverSdk.serverSdk.lists1(serverSdkListsRequest2);\n\n  console.log(data);\n})();\n"
     },
     "/api/lawyer/dashboard/times/list": {
-      "post": "import { ServerSdk, TimesListRequest } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const timesListRequest: TimesListRequest = {\t\n    id: \"19\"\n  };\n\n  const data = await serverSdk.times.list(timesListRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkListRequest4 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkListRequest4: ServerSdkListRequest4 = {\t\n    id: \"19\"\n  };\n\n  const data = await serverSdk.serverSdk.list12(serverSdkListRequest4);\n\n  console.log(data);\n})();\n"
     },
     "/api/lawyer/dashboard/times/create": {
-      "post": "import { ServerSdk, TimesCreateRequest } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const timesCreateRequest: TimesCreateRequest = {\t\n    lawyerId: \"2\",\n    serviceId: \"1\",\n    date: \"2025-10-18\",\n    time: \"12:00:00\"\n  };\n\n  const data = await serverSdk.times.create(timesCreateRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkCreateRequest4 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkCreateRequest4: ServerSdkCreateRequest4 = {\t\n    lawyerId: \"2\",\n    serviceId: \"1\",\n    date: \"2025-10-18\",\n    time: \"12:00:00\"\n  };\n\n  const data = await serverSdk.serverSdk.create3(serverSdkCreateRequest4);\n\n  console.log(data);\n})();\n"
     },
     "/api/lawyer/dashboard/times/update": {
-      "post": "import { ServerSdk, TimesUpdateRequest } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const timesUpdateRequest: TimesUpdateRequest = {\t\n    id: \"11\",\n    lawyerId: \"1\",\n    serviceId: \"1\",\n    date: \"2025-10-18\",\n    time: \"12:00:00\"\n  };\n\n  const data = await serverSdk.times.update(timesUpdateRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkUpdateRequest2 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkUpdateRequest2: ServerSdkUpdateRequest2 = {\t\n    id: \"11\",\n    lawyerId: \"1\",\n    serviceId: \"1\",\n    date: \"2025-10-18\",\n    time: \"12:00:00\"\n  };\n\n  const data = await serverSdk.serverSdk.update1(serverSdkUpdateRequest2);\n\n  console.log(data);\n})();\n"
     },
     "/api/lawyer/dashboard/times/delete": {
-      "post": "import { ServerSdk, TimesDeleteRequest } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const timesDeleteRequest: TimesDeleteRequest = {\t\n    id: \"125\"\n  };\n\n  const data = await serverSdk.times.delete_(timesDeleteRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkDeleteRequest2 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkDeleteRequest2: ServerSdkDeleteRequest2 = {\t\n    id: \"125\"\n  };\n\n  const data = await serverSdk.serverSdk.delete1(serverSdkDeleteRequest2);\n\n  console.log(data);\n})();\n"
     },
     "/api/lawyer/dashboard/times/create-bulk": {
-      "post": "import { CreateBulkRequest, ServerSdk, TimeSchedules } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const timeSchedules: TimeSchedules = {\t\n    days: [1],\n    start: \"11:00\",\n    end: \"23:59\"\n  };\n  \n  const createBulkRequest: CreateBulkRequest = {\t\n    lawyerId: 2,\n    start: \"2024-02-05\",\n    end: \"2024-02-11\",\n    serviceId: [1],\n    timeSchedules: [timeSchedules]\n  };\n\n  const data = await serverSdk.times.createBulk(createBulkRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { CreateBulkRequest, ServerSdk, TimeSchedules } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const timeSchedules: TimeSchedules = {\t\n    days: [1],\n    start: \"11:00\",\n    end: \"23:59\"\n  };\n  \n  const createBulkRequest: CreateBulkRequest = {\t\n    lawyerId: 2,\n    start: \"2024-02-05\",\n    end: \"2024-02-11\",\n    serviceId: [1],\n    timeSchedules: [timeSchedules]\n  };\n\n  const data = await serverSdk.serverSdk.createBulk(createBulkRequest);\n\n  console.log(data);\n})();\n"
     },
     "/api/lawyer/dashboard/services/list": {
-      "post": "import { ServerSdk, ServicesListsRequest } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const servicesListsRequest: ServicesListsRequest = {\t\n    id: \"2\"\n  };\n\n  const data = await serverSdk.services.lists(servicesListsRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkListsRequest3 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkListsRequest3: ServerSdkListsRequest3 = {\t\n    id: \"2\"\n  };\n\n  const data = await serverSdk.serverSdk.lists2(serverSdkListsRequest3);\n\n  console.log(data);\n})();\n"
     },
     "/api/lawyer/dashboard/services/update": {
-      "post": "import { ServerSdk, ServicesUpdateRequest } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const servicesUpdateRequest: ServicesUpdateRequest = {\t\n    id: \"37\",\n    lawyerId: \"11\",\n    name: \"test\",\n    slug: \"chat-room-1\",\n    typeId: \"1\",\n    duration: \"45\",\n    amount: \"100000\",\n    countryId: \"28\",\n    status: \"active\"\n  };\n\n  const data = await serverSdk.services.update(servicesUpdateRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkUpdateRequest3 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkUpdateRequest3: ServerSdkUpdateRequest3 = {\t\n    id: \"37\",\n    lawyerId: \"11\",\n    name: \"test\",\n    slug: \"chat-room-1\",\n    typeId: \"1\",\n    duration: \"45\",\n    amount: \"100000\",\n    countryId: \"28\",\n    status: \"active\"\n  };\n\n  const data = await serverSdk.serverSdk.update2(serverSdkUpdateRequest3);\n\n  console.log(data);\n})();\n"
     },
     "/api/lawyer/dashboard/wallet/cards/list": {
-      "post": "import { CardsListRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const cardsListRequest: CardsListRequest = {\t\n    lawyerId: \"79\"\n  };\n\n  const data = await serverSdk.cards.list(cardsListRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkListRequest5 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkListRequest5: ServerSdkListRequest5 = {\t\n    lawyerId: \"79\"\n  };\n\n  const data = await serverSdk.serverSdk.list13(serverSdkListRequest5);\n\n  console.log(data);\n})();\n"
     },
     "/api/lawyer/dashboard/wallet/cards/create": {
-      "post": "import { CardsCreateRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const cardsCreateRequest: CardsCreateRequest = {\t\n    lawyerId: \"1\",\n    shebaNumber: \"6022365465456454654654654\"\n  };\n\n  const data = await serverSdk.cards.create(cardsCreateRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkCreateRequest5 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkCreateRequest5: ServerSdkCreateRequest5 = {\t\n    lawyerId: \"1\",\n    shebaNumber: \"6022365465456454654654654\"\n  };\n\n  const data = await serverSdk.serverSdk.create4(serverSdkCreateRequest5);\n\n  console.log(data);\n})();\n"
     },
     "/api/lawyer/dashboard/wallet/withdrawal/create": {
-      "post": "import { ServerSdk, WithdrawalRequestsCreateRequest } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const withdrawalRequestsCreateRequest: WithdrawalRequestsCreateRequest = {\t\n    lawyerId: \"79\",\n    cardId: \"13\"\n  };\n\n  const data = await serverSdk.withdrawalRequests.create(withdrawalRequestsCreateRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkCreateRequest6 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkCreateRequest6: ServerSdkCreateRequest6 = {\t\n    lawyerId: \"79\",\n    cardId: \"13\"\n  };\n\n  const data = await serverSdk.serverSdk.create5(serverSdkCreateRequest6);\n\n  console.log(data);\n})();\n"
     },
     "/api/lawyer/dashboard/wallet/withdrawal/list": {
-      "post": "import { ServerSdk, WithdrawalRequestsListRequest } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const withdrawalRequestsListRequest: WithdrawalRequestsListRequest = {\t\n    lawyerId: \"1\"\n  };\n\n  const data = await serverSdk.withdrawalRequests.list(withdrawalRequestsListRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkListRequest6 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkListRequest6: ServerSdkListRequest6 = {\t\n    lawyerId: \"1\"\n  };\n\n  const data = await serverSdk.serverSdk.list14(serverSdkListRequest6);\n\n  console.log(data);\n})();\n"
     },
     "/api/lawyer/dashboard/wallet/info": {
-      "post": "import { LawyerDashboardWalletInfoRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const lawyerDashboardWalletInfoRequest: LawyerDashboardWalletInfoRequest = {\t\n    lawyerId: \"1\"\n  };\n\n  const data = await serverSdk.lawyerDashboardWallet.info(lawyerDashboardWalletInfoRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkInfoRequest3 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkInfoRequest3: ServerSdkInfoRequest3 = {\t\n    lawyerId: \"1\"\n  };\n\n  const data = await serverSdk.serverSdk.info3(serverSdkInfoRequest3);\n\n  console.log(data);\n})();\n"
     },
     "/api/lawyer/dashboard/wallet/add_balance": {
-      "post": "import { AddBalanceRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const addBalanceRequest: AddBalanceRequest = {\t\n    lawyerId: \"1\",\n    amount: \"100000\"\n  };\n\n  const data = await serverSdk.lawyerDashboardWallet.addBalance(addBalanceRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { AddBalanceRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const addBalanceRequest: AddBalanceRequest = {\t\n    lawyerId: \"1\",\n    amount: \"100000\"\n  };\n\n  const data = await serverSdk.serverSdk.addBalance(addBalanceRequest);\n\n  console.log(data);\n})();\n"
     },
     "/api/lawyer/dashboard/category/list": {
-      "post": "import { LawyerDashboardCategoryListsRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const lawyerDashboardCategoryListsRequest: LawyerDashboardCategoryListsRequest = {\t\n    id: \"79\"\n  };\n\n  const data = await serverSdk.lawyerDashboardCategory.lists(lawyerDashboardCategoryListsRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkListsRequest4 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkListsRequest4: ServerSdkListsRequest4 = {\t\n    id: \"79\"\n  };\n\n  const data = await serverSdk.serverSdk.lists3(serverSdkListsRequest4);\n\n  console.log(data);\n})();\n"
     },
     "/api/lawyer/dashboard/category/create": {
-      "post": "import { LawyerDashboardCategoryCreateRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const lawyerDashboardCategoryCreateRequest: LawyerDashboardCategoryCreateRequest = {\t\n    id: \"2\",\n    categoryId: \"1\"\n  };\n\n  const data = await serverSdk.lawyerDashboardCategory.create(lawyerDashboardCategoryCreateRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkCreateRequest7 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkCreateRequest7: ServerSdkCreateRequest7 = {\t\n    id: \"2\",\n    categoryId: \"1\"\n  };\n\n  const data = await serverSdk.serverSdk.create6(serverSdkCreateRequest7);\n\n  console.log(data);\n})();\n"
     },
     "/api/lawyer/dashboard/category/remove": {
-      "post": "import { LawyerDashboardCategoryRemoveRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const lawyerDashboardCategoryRemoveRequest: LawyerDashboardCategoryRemoveRequest = {\t\n    id: \"1\",\n    categoryId: \"1\"\n  };\n\n  const data = await serverSdk.lawyerDashboardCategory.remove(lawyerDashboardCategoryRemoveRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkRemoveRequest5 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkRemoveRequest5: ServerSdkRemoveRequest5 = {\t\n    id: \"1\",\n    categoryId: \"1\"\n  };\n\n  const data = await serverSdk.serverSdk.remove4(serverSdkRemoveRequest5);\n\n  console.log(data);\n})();\n"
     },
     "/api/lawyer/dashboard/signatrue/list": {
-      "post": "import { LawyerDashboardSignaturesListRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const lawyerDashboardSignaturesListRequest: LawyerDashboardSignaturesListRequest = {\t\n    id: \"2\"\n  };\n\n  const data = await serverSdk.lawyerDashboardSignatures.list(lawyerDashboardSignaturesListRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkListRequest7 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkListRequest7: ServerSdkListRequest7 = {\t\n    id: \"2\"\n  };\n\n  const data = await serverSdk.serverSdk.list15(serverSdkListRequest7);\n\n  console.log(data);\n})();\n"
     },
     "/api/lawyer/dashboard/signatrue/create": {
-      "post": "import { LawyerDashboardSignaturesCreateRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const lawyerDashboardSignaturesCreateRequest: LawyerDashboardSignaturesCreateRequest = {\t\n    lawyerId: \"2\",\n    title: \"امضای اصلی\",\n    image: new ArrayBuffer(0)\n  };\n\n  const data = await serverSdk.lawyerDashboardSignatures.create(lawyerDashboardSignaturesCreateRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkCreateRequest8 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkCreateRequest8: ServerSdkCreateRequest8 = {\t\n    lawyerId: \"2\",\n    title: \"امضای اصلی\",\n    image: new ArrayBuffer(0)\n  };\n\n  const data = await serverSdk.serverSdk.create7(serverSdkCreateRequest8);\n\n  console.log(data);\n})();\n"
     },
     "/api/lawyer/dashboard/achievement/lists": {
-      "post": "import { LawyerDashboardAchievementBadgeListRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const lawyerDashboardAchievementBadgeListRequest: LawyerDashboardAchievementBadgeListRequest = {\t\n    lawyerId: \"2\"\n  };\n\n  const data = await serverSdk.lawyerDashboardAchievementBadge.list(lawyerDashboardAchievementBadgeListRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkListRequest8 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkListRequest8: ServerSdkListRequest8 = {\t\n    lawyerId: \"2\"\n  };\n\n  const data = await serverSdk.serverSdk.list16(serverSdkListRequest8);\n\n  console.log(data);\n})();\n"
     },
     "/api/lawyer/dashboard/leaderboards": {
-      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.leaderboards.list();\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.serverSdk.list17();\n\n  console.log(data);\n})();\n"
     },
     "/api/lawyer/dashboard/settings/notifications/list": {
-      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.lawyerDashboardSettingsNotifications.list();\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.serverSdk.list18();\n\n  console.log(data);\n})();\n"
     },
     "/api/lawyer/dashboard/settings/notifications/update": {
-      "post": "import { LawyerDashboardSettingsNotificationsUpdateRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const lawyerDashboardSettingsNotificationsUpdateRequest: LawyerDashboardSettingsNotificationsUpdateRequest = {\t\n    pusherEnabled: \"true\",\n    smsEnabled: \"true\",\n    emailEnabled: \"true\"\n  };\n\n  const data = await serverSdk.lawyerDashboardSettingsNotifications.update(lawyerDashboardSettingsNotificationsUpdateRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkUpdateRequest4 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkUpdateRequest4: ServerSdkUpdateRequest4 = {\t\n    pusherEnabled: \"true\",\n    smsEnabled: \"true\",\n    emailEnabled: \"true\"\n  };\n\n  const data = await serverSdk.serverSdk.update3(serverSdkUpdateRequest4);\n\n  console.log(data);\n})();\n"
     },
     "/api/lawyers/search": {
-      "post": "import { SearchRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const searchRequest: SearchRequest = {\t\n    name: \"احمد\",\n    gender: \"male\",\n    countryId: \"28\",\n    stateId: \"5\",\n    cityId: \"4\",\n    categoryId: \"1\",\n    sortBy: \"id\",\n    sortDir: \"asc\",\n    perPage: \"15\",\n    page: \"1\",\n    typeId: \"1\"\n  };\n\n  const data = await serverSdk.lawyer.search(searchRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { SearchRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const searchRequest: SearchRequest = {\t\n    name: \"محمد\",\n    gender: \"male\",\n    countryId: \"28\",\n    stateId: \"5\",\n    cityId: \"4\",\n    categoryId: \"1\",\n    sortBy: \"id\",\n    sortDir: \"asc\",\n    perPage: \"90\",\n    page: \"1\",\n    typeId: \"1\"\n  };\n\n  const data = await serverSdk.serverSdk.search(searchRequest);\n\n  console.log(data);\n})();\n"
     },
     "/api/lawyers/info": {
-      "post": "import { LawyerInfoRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const lawyerInfoRequest: LawyerInfoRequest = {\t\n    id: \"1\"\n  };\n\n  const data = await serverSdk.lawyer.info(lawyerInfoRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkInfoRequest4 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkInfoRequest4: ServerSdkInfoRequest4 = {\t\n    id: \"1\"\n  };\n\n  const data = await serverSdk.serverSdk.info4(serverSdkInfoRequest4);\n\n  console.log(data);\n})();\n"
     },
     "/api/lawyers/services": {
-      "post": "import { ServerSdk, ServicesRequest } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const servicesRequest: ServicesRequest = {\t\n    id: \"19\"\n  };\n\n  const data = await serverSdk.lawyer.services(servicesRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServicesRequest } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const servicesRequest: ServicesRequest = {\t\n    id: \"19\"\n  };\n\n  const data = await serverSdk.serverSdk.services(servicesRequest);\n\n  console.log(data);\n})();\n"
     },
     "/api/lawyer/create": {
-      "post": "import { LawyerCreateRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const lawyerCreateRequest: LawyerCreateRequest = {\t\n    firstName: \"test\",\n    lastName: \"test2\",\n    biography: \"lorem iplosiommmmmmmm\",\n    phoneNumber: \"09109693365\",\n    email: \"yousef@gmail.com\",\n    code: \"123456789\",\n    countryId: \"28\",\n    stateId: \"4\",\n    cityId: \"5\",\n    startWorkingDate: \"2025/10/06\",\n    gender: \"male\",\n    issueDate: \"2025/10/06\",\n    licenseLevel: \"کارشناسی\",\n    issuingAuthority: \"دانشگاه آزاد\",\n    type: \"trainee\"\n  };\n\n  const data = await serverSdk.lawyer.create(lawyerCreateRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkCreateRequest9 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkCreateRequest9: ServerSdkCreateRequest9 = {\t\n    firstName: \"test\",\n    lastName: \"test2\",\n    biography: \"lorem iplosiommmmmmmm\",\n    phoneNumber: \"09109693365\",\n    email: \"yousef@gmail.com\",\n    code: \"123456789\",\n    countryId: \"28\",\n    stateId: \"4\",\n    cityId: \"5\",\n    startWorkingDate: \"2025/10/06\",\n    gender: \"male\",\n    issueDate: \"2025/10/06\",\n    licenseLevel: \"کارشناسی\",\n    issuingAuthority: \"دانشگاه آزاد\",\n    type: \"trainee\"\n  };\n\n  const data = await serverSdk.serverSdk.create8(serverSdkCreateRequest9);\n\n  console.log(data);\n})();\n"
     },
     "/api/lawyers/boost-list": {
-      "post": "import { LawyerBoostListRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const lawyerBoostListRequest: LawyerBoostListRequest = {\t\n    id: \"1\"\n  };\n\n  const data = await serverSdk.lawyer.boostList(lawyerBoostListRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { BoostListRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const boostListRequest: BoostListRequest = {\t\n    id: \"1\"\n  };\n\n  const data = await serverSdk.serverSdk.boostList(boostListRequest);\n\n  console.log(data);\n})();\n"
     },
     "/api/lawyers/times": {
-      "post": "import { ServerSdk, TimesRequest } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const timesRequest: TimesRequest = {\t\n    id: \"1\",\n    serviceId: \"1\"\n  };\n\n  const data = await serverSdk.lawyer.times(timesRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, TimesRequest } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const timesRequest: TimesRequest = {\t\n    id: \"1\",\n    serviceId: \"1\"\n  };\n\n  const data = await serverSdk.serverSdk.times(timesRequest);\n\n  console.log(data);\n})();\n"
     },
     "/api/cart/create": {
-      "post": "import { CartCreateRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const cartCreateRequest: CartCreateRequest = {\t\n    lawyerId: \"3\",\n    serviceId: \"2\",\n    dateId: \"1\"\n  };\n\n  const data = await serverSdk.cart.create(cartCreateRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkCreateRequest10 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkCreateRequest10: ServerSdkCreateRequest10 = {\t\n    lawyerId: \"3\",\n    serviceId: \"2\",\n    dateId: \"1\"\n  };\n\n  const data = await serverSdk.serverSdk.create9(serverSdkCreateRequest10);\n\n  console.log(data);\n})();\n"
     },
     "/api/cart/info": {
-      "post": "import { CartInfoRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const cartInfoRequest: CartInfoRequest = {\t\n    id: \"150\"\n  };\n\n  const data = await serverSdk.cart.info(cartInfoRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkInfoRequest5 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkInfoRequest5: ServerSdkInfoRequest5 = {\t\n    id: \"150\"\n  };\n\n  const data = await serverSdk.serverSdk.info5(serverSdkInfoRequest5);\n\n  console.log(data);\n})();\n"
     },
     "/api/cart/add_coupon": {
-      "post": "import { AddCouponRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const addCouponRequest: AddCouponRequest = {\t\n    cartId: \"1\",\n    code: \"hediyeh\"\n  };\n\n  const data = await serverSdk.cart.addCoupon(addCouponRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { AddCouponRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const addCouponRequest: AddCouponRequest = {\t\n    cartId: \"1\",\n    code: \"hediyeh\"\n  };\n\n  const data = await serverSdk.serverSdk.addCoupon(addCouponRequest);\n\n  console.log(data);\n})();\n"
     },
     "/api/cart/remove_coupon": {
-      "post": "import { RemoveCouponRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const removeCouponRequest: RemoveCouponRequest = {\t\n    id: \"1\"\n  };\n\n  const data = await serverSdk.cart.removeCoupon(removeCouponRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { RemoveCouponRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const removeCouponRequest: RemoveCouponRequest = {\t\n    id: \"1\"\n  };\n\n  const data = await serverSdk.serverSdk.removeCoupon(removeCouponRequest);\n\n  console.log(data);\n})();\n"
     },
     "/api/cart/pay": {
-      "post": "import { CartPayRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const cartPayRequest: CartPayRequest = {\t\n    id: \"175\",\n    payMode: \"zarinpal\"\n  };\n\n  const data = await serverSdk.cart.pay(cartPayRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkPayRequest2 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkPayRequest2: ServerSdkPayRequest2 = {\t\n    id: \"175\",\n    payMode: \"zarinpal\"\n  };\n\n  const data = await serverSdk.serverSdk.pay1(serverSdkPayRequest2);\n\n  console.log(data);\n})();\n"
     },
     "/api/chats/list": {
-      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.chats.list();\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.serverSdk.list19();\n\n  console.log(data);\n})();\n"
     },
     "/api/chats/message": {
-      "post": "import { MessageListRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const messageListRequest: MessageListRequest = {\t\n    id: \"3\"\n  };\n\n  const data = await serverSdk.chats.messageList(messageListRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { MessageListRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const messageListRequest: MessageListRequest = {\t\n    id: \"3\"\n  };\n\n  const data = await serverSdk.serverSdk.messageList(messageListRequest);\n\n  console.log(data);\n})();\n"
     },
     "/api/chats/send-message": {
-      "post": "import { ChatsSendMessageRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const chatsSendMessageRequest: ChatsSendMessageRequest = {\t\n    id: \"1\",\n    message: \"سلام، چطوری؟\",\n    files: new ArrayBuffer(0)\n  };\n\n  const data = await serverSdk.chats.sendMessage(chatsSendMessageRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkSendMessageRequest1 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkSendMessageRequest1: ServerSdkSendMessageRequest1 = {\t\n    id: \"1\",\n    message: \"سلام، چطوری؟\",\n    files: new ArrayBuffer(0)\n  };\n\n  const data = await serverSdk.serverSdk.sendMessage(serverSdkSendMessageRequest1);\n\n  console.log(data);\n})();\n"
     },
     "/api/calls/1/offer": {
-      "post": "import { OfferRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const offerRequest: OfferRequest = {\t\n    fromPeer: \"from_peer\",\n    sdp: \"sdp\"\n  };\n\n  const data = await serverSdk.tools.offer(offerRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { OfferRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const offerRequest: OfferRequest = {\t\n    fromPeer: \"from_peer\",\n    sdp: \"sdp\"\n  };\n\n  const data = await serverSdk.serverSdk.offer(offerRequest);\n\n  console.log(data);\n})();\n"
     },
     "/api/calls/1/answer": {
-      "post": "import { AnswerRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const answerRequest: AnswerRequest = {\t\n    toPeer: \"to_peer\",\n    sdp: \"sdp\"\n  };\n\n  const data = await serverSdk.tools.answer(answerRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { AnswerRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const answerRequest: AnswerRequest = {\t\n    toPeer: \"to_peer\",\n    sdp: \"sdp\"\n  };\n\n  const data = await serverSdk.serverSdk.answer(answerRequest);\n\n  console.log(data);\n})();\n"
     },
     "/api/calls/1/ice": {
-      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.tools.ice();\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.serverSdk.ice();\n\n  console.log(data);\n})();\n"
     },
     "/api/calls/1/sdp": {
-      "get": "import { MemberOfRoomRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const memberOfRoomRequest: MemberOfRoomRequest = {\t\n    peerId: \"peer_id\"\n  };\n\n  const data = await serverSdk.tools.memberOfRoom(memberOfRoomRequest);\n\n  console.log(data);\n})();\n"
+      "get": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.serverSdk.memberOfRoom();\n\n  console.log(data);\n})();\n"
     },
     "/api/calls/udgsdghewbd8745/join": {
-      "post": "import { JoinRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const joinRequest: JoinRequest = {\t\n    userName: \"Yousef Moghadam\"\n  };\n\n  const data = await serverSdk.calls.join(joinRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { JoinRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const joinRequest: JoinRequest = {\t\n    userName: \"Yousef Moghadam\"\n  };\n\n  const data = await serverSdk.serverSdk.join(joinRequest);\n\n  console.log(data);\n})();\n"
     },
     "/api/calls/udgsdghewbd8745/end": {
-      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.calls.end();\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.serverSdk.end();\n\n  console.log(data);\n})();\n"
     },
     "/api/calls/list": {
-      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.calls.list();\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.serverSdk.list20();\n\n  console.log(data);\n})();\n"
     },
     "/api/blogs/list": {
-      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.blogs.list();\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.serverSdk.list21();\n\n  console.log(data);\n})();\n"
     },
     "/api/blogs/1": {
-      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.blogs.info();\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.serverSdk.info6();\n\n  console.log(data);\n})();\n"
     },
     "/api/maps/list": {
-      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.maps.list();\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.serverSdk.list22();\n\n  console.log(data);\n})();\n"
     },
     "/api/maps/info": {
-      "post": "import { MapsInfoRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const mapsInfoRequest: MapsInfoRequest = {\t\n    id: \"1\"\n  };\n\n  const data = await serverSdk.maps.info(mapsInfoRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkInfoRequest6 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkInfoRequest6: ServerSdkInfoRequest6 = {\t\n    id: \"1\"\n  };\n\n  const data = await serverSdk.serverSdk.info7(serverSdkInfoRequest6);\n\n  console.log(data);\n})();\n"
     },
     "/api/tickets": {
-      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.tickets.lists();\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.serverSdk.lists4();\n\n  console.log(data);\n})();\n"
     },
     "/api/tickets/create": {
-      "post": "import { ServerSdk, TicketsCreateRequest } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const ticketsCreateRequest: TicketsCreateRequest = {\t\n    subject: \"تست سیستم\",\n    message: \"سلام، مشکل دارم\"\n  };\n\n  const data = await serverSdk.tickets.create(ticketsCreateRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkCreateRequest11 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkCreateRequest11: ServerSdkCreateRequest11 = {\t\n    subject: \"تست سیستم\",\n    message: \"سلام، مشکل دارم\"\n  };\n\n  const data = await serverSdk.serverSdk.create10(serverSdkCreateRequest11);\n\n  console.log(data);\n})();\n"
     },
     "/api/tickets/1": {
-      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.tickets.getTicketMessage();\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.serverSdk.getTicketMessage();\n\n  console.log(data);\n})();\n"
     },
     "/api/tickets/1/messages": {
-      "post": "import { ServerSdk, TicketsSendMessageRequest } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const ticketsSendMessageRequest: TicketsSendMessageRequest = {\t\n    message: \"پیام\"\n  };\n\n  const data = await serverSdk.tickets.sendMessage(ticketsSendMessageRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { ServerSdk, ServerSdkSendMessageRequest2 } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const serverSdkSendMessageRequest2: ServerSdkSendMessageRequest2 = {\t\n    message: \"پیام\"\n  };\n\n  const data = await serverSdk.serverSdk.sendMessage1(serverSdkSendMessageRequest2);\n\n  console.log(data);\n})();\n"
     },
     "/api/faqs": {
-      "post": "import { FaqListRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const faqListRequest: FaqListRequest = {\t\n    category: \"family\",\n    city: \"karaj\",\n    page: \"home\",\n    cityId: \"1\",\n    perPage: \"100\"\n  };\n\n  const data = await serverSdk.faq.faqList(faqListRequest);\n\n  console.log(data);\n})();\n"
+      "post": "import { FaqListRequest, ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  \n  const faqListRequest: FaqListRequest = {\t\n    category: \"family\",\n    city: \"karaj\",\n    page: \"home\",\n    cityId: \"1\",\n    perPage: \"100\"\n  };\n\n  const data = await serverSdk.serverSdk.faqList(faqListRequest);\n\n  console.log(data);\n})();\n"
     }
   },
-  "example": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.states.countries();\n\n  console.log(data);\n})();\n",
+  "example": "import { ServerSdk } from 'server-sdk';\n\n(async () => {\n  const serverSdk = new ServerSdk({\n\ttoken: 'YOUR_TOKEN',\n});\n\n  const data = await serverSdk.serverSdk.countries();\n\n  console.log(data);\n})();\n",
   "authentication": {
     "bearer": {
       "constructor": "const sdk = new ServerSdk({ token: 'YOUR_TOKEN' });",

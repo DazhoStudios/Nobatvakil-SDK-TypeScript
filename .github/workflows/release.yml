@@ -6,16 +6,13 @@ on:
       - '.manifest.json'
       - '.github/workflows/release.yml'
   workflow_dispatch:
-    inputs:
-      publish_to_package_manager:
-        description: 'Override PUBLISH_TO_PACKAGE_MANAGER for this run'
-        type: boolean
-        default: false
 
 env:
-  # Toggle to enable package-manager publishing on push to base.
-  # The workflow_dispatch input above overrides this on manual runs.
-  PUBLISH_TO_PACKAGE_MANAGER: true
+  # SDK identity baked in at generation time from the in-memory build context,
+  # so the workflow never reads .manifest.json or package.json at runtime.
+  SDK_VERSION: '3.0.0'
+  SDK_PACKAGE_NAME: 'server-sdk'
+  RELEASE_TAG: 'v3.0.0'
 
 jobs:
   release:
@@ -24,73 +21,58 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - name: Read SDK version from .manifest.json
-        id: version
-        if: github.event_name == 'push'
-        run: |
-          if [ ! -f .manifest.json ]; then
-            echo "::notice::No .manifest.json found at repo root, skipping tag"
-            echo "skip=true" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
-          VERSION=$(jq -r '.config.sdkVersion // empty' .manifest.json)
-          if [ -z "$VERSION" ]; then
-            echo "::notice::config.sdkVersion missing from .manifest.json, skipping tag"
-            echo "skip=true" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
-          if ! echo "$VERSION" | grep -Eq '^[0-9]+\.[0-9]+\.[0-9]+([-+].+)?$'; then
-            echo "::notice::config.sdkVersion '$VERSION' is not a valid semver, skipping tag"
-            echo "skip=true" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
-          echo "tag=v$VERSION" >> "$GITHUB_OUTPUT"
-          echo "skip=false" >> "$GITHUB_OUTPUT"
       - name: Create tag if it does not exist
-        if: steps.version.outputs.skip == 'false'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TAG: ${{ steps.version.outputs.tag }}
         run: |
-          if gh api "repos/${{ github.repository }}/git/refs/tags/$TAG" >/dev/null 2>&1; then
-            echo "::notice::Tag $TAG already exists, nothing to do"
+          if gh api "repos/${{ github.repository }}/git/refs/tags/$RELEASE_TAG" >/dev/null 2>&1; then
+            echo "::notice::Tag $RELEASE_TAG already exists, nothing to do"
             exit 0
           fi
           gh api -X POST "repos/${{ github.repository }}/git/refs" \
-            -f ref="refs/tags/$TAG" \
+            -f ref="refs/tags/$RELEASE_TAG" \
             -f sha="${{ github.sha }}"
-          echo "::notice::Created tag $TAG at ${{ github.sha }}"
-      - name: Compute publish gate
-        id: gate
+          echo "::notice::Created tag $RELEASE_TAG at ${{ github.sha }}"
+      - name: Check required publishing secrets
+        id: secrets
+        # Publishing is enabled by default. Secrets cannot be referenced in a
+        # step-level `if:`, so read them into env here and skip the publish steps
+        # (succeeding, not failing) when a required secret is unset or empty.
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "ok=${{ inputs.publish_to_package_manager }}" >> "$GITHUB_OUTPUT"
+          if [ -n "$NPM_TOKEN" ]; then
+            echo "ok=true" >> "$GITHUB_OUTPUT"
           else
-            echo "ok=$PUBLISH_TO_PACKAGE_MANAGER" >> "$GITHUB_OUTPUT"
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::NPM_TOKEN is not set; skipping npm publishing."
           fi
       - uses: actions/setup-node@v4
-        if: steps.gate.outputs.ok == 'true'
+        if: steps.secrets.outputs.ok == 'true'
         with:
           node-version: '20'
           registry-url: 'https://registry.npmjs.org'
       - name: Install dependencies
-        if: steps.gate.outputs.ok == 'true'
+        if: steps.secrets.outputs.ok == 'true'
         run: npm install --no-audit --no-fund
       - name: Publish to npm
-        if: steps.gate.outputs.ok == 'true'
+        if: steps.secrets.outputs.ok == 'true'
         run: |
-          VERSION=$(node -p "require('./package.json').version")
-          PUBLISHED=$(npm view "$(node -p "require('./package.json').name")@$VERSION" version 2>/dev/null || echo "")
+          PUBLISHED=$(npm view "$SDK_PACKAGE_NAME@$SDK_VERSION" version 2>/dev/null || echo "")
           if [ -z "$PUBLISHED" ]; then
             npm publish --access public
           else
-            echo "Version $VERSION already published, skipping."
+            echo "Version $SDK_VERSION already published, skipping."
           fi
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Create GitHub release
-        if: steps.gate.outputs.ok == 'true' && steps.version.outputs.skip == 'false'
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: ${{ steps.version.outputs.tag }}
-          fail_on_unmatched_files: false
+        if: steps.secrets.outputs.ok == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
+            echo "::notice::Release $RELEASE_TAG already exists"
+          else
+            gh release create "$RELEASE_TAG" --title "$RELEASE_TAG" --generate-notes
+          fi

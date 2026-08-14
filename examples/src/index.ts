@@ -5,7 +5,7 @@ import { ServerSdk } from 'server-sdk';
     token: 'YOUR_TOKEN',
   });
 
-  const data = await serverSdk.states.countries();
+  const data = await serverSdk.serverSdk.countries();
 
   console.log(data);
 })();

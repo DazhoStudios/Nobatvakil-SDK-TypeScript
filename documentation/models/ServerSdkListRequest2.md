@@ -1,0 +1,7 @@
+# ServerSdkListRequest2
+
+**Properties**
+
+| Name     | Type   | Required | Description |
+| :------- | :----- | :------- | :---------- |
+| lawyerId | string | ❌       |             |
